@@ -1,4 +1,7 @@
 import streamlit as st
+import sqlite3
+from database import get_connection
+
 st.title('Order Management')
 
 # Toon bestaande orders
