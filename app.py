@@ -20,8 +20,13 @@ DB_PATH = 'central_database.db'
 
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
-        conn.execute('CREATE TABLE IF NOT EXISTS example (id INTEGER PRIMARY KEY, name TEXT)')
-
+        conn.execute('''CREATE TABLE IF NOT EXISTS orders (
+            id INTEGER PRIMARY KEY,
+            customer TEXT,
+            stroopwafels INTEGER,
+            prince_koeken INTEGER,
+            orios INTEGER
+        )''')
 init_db()
 
 # Main app layout
