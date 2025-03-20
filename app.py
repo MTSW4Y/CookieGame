@@ -8,8 +8,8 @@ from database import add_order
 # Set up the SQLite database
 DB_PATH = 'central_database.db'
 
-# new_order_message = None
-# last_order_time = None
+new_order_message = None
+last_order_time = None
 
 
 def init_db():
@@ -26,24 +26,24 @@ def init_db():
 init_db()
 
 
-# # Background process for generating random orders
-# CUSTOMERS = ['AH', 'Lidl', 'Jamin']
+# Background process for generating random orders
+CUSTOMERS = ['AH', 'Lidl', 'Jamin']
 
-# def generate_random_order():
-#     global new_order_message, last_order_time
-#     while True:
-#         customer = random.choice(CUSTOMERS)
-#         stroopwafels = random.choice([0, 2, 4, 6])
-#         prince_koeken = random.choice([0, 3, 6, 9])
-#         orios = random.choice([0, 5, 10, 15, 20, 25])
-#         add_order(customer, stroopwafels, prince_koeken, orios)
-#         new_order_message = f'✅ New order added for {customer}!'
-#         last_order_time = time.time()
-#         time.sleep(60)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
+def generate_random_order():
+    global new_order_message, last_order_time
+    while True:
+        customer = random.choice(CUSTOMERS)
+        stroopwafels = random.choice([0, 2, 4, 6])
+        prince_koeken = random.choice([0, 3, 6, 9])
+        orios = random.choice([0, 5, 10, 15, 20, 25])
+        add_order(customer, stroopwafels, prince_koeken, orios)
+        new_order_message = f'✅ New order added for {customer}!'
+        last_order_time = time.time()
+        time.sleep(60)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
 
 
-# order_thread = threading.Thread(target=generate_random_order, daemon=True)
-# order_thread.start()
+order_thread = threading.Thread(target=generate_random_order, daemon=True)
+order_thread.start()
 
 
 # Main app layout
