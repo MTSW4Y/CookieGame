@@ -6,9 +6,9 @@ from app import new_order_message, last_order_time
 st.title('Order Management')
 
 # Toon nieuwe order melding
-if new_order_message and last_order_time:
-    if time.time() - last_order_time <= 10:  # Meldingen worden 10 seconden weergegeven
-        st.success(new_order_message)
+# if new_order_message and last_order_time:
+#     if time.time() - last_order_time <= 10:  # Meldingen worden 10 seconden weergegeven
+#         st.success(new_order_message)
 
 # Toon bestaande orders met automatische verversing
 st.write("### Existing Orders")
