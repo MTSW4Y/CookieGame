@@ -12,18 +12,18 @@ new_order_message = None
 last_order_time = None
 
 
-def init_db():
-    with sqlite3.connect(DB_PATH) as conn:
-        conn.execute('''CREATE TABLE IF NOT EXISTS orders (
-            id INTEGER PRIMARY KEY,
-            customer TEXT,
-            stroopwafels INTEGER,
-            prince_koeken INTEGER,
-            orios INTEGER
-        )''')
+# def init_db():
+#     with sqlite3.connect(DB_PATH) as conn:
+#         conn.execute('''CREATE TABLE IF NOT EXISTS orders (
+#             id INTEGER PRIMARY KEY,
+#             customer TEXT,
+#             stroopwafels INTEGER,
+#             prince_koeken INTEGER,
+#             orios INTEGER
+#         )''')
 
 
-init_db()
+# init_db()
 
 
 # # Background process for generating random orders
