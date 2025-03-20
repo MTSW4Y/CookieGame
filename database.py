@@ -18,7 +18,7 @@ def get_orders():
     with get_connection() as conn:
         return pd.read_sql('SELECT * FROM orders', conn)
 
-# Voeg hier alvast drie orders toe
-add_order('AH', 3, 16, 0)
-add_order('Lidl', 0, 0, 25)
-add_order('Jamin', 5, 5, 5)
+# # Voeg hier alvast drie orders toe
+# add_order('AH', 3, 16, 0)
+# add_order('Lidl', 0, 0, 25)
+# add_order('Jamin', 5, 5, 5)
