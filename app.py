@@ -27,18 +27,4 @@ init_db()
 # Main app layout
 st.set_page_config(page_title='Streamlit Multi-Page App', layout="centered")
 st.title("Main Menu")
-
-options = {
-    "Teams": "pages/teams.py",
-    "Leaderboard": "pages/leaderboard.py",
-    "Order Management": "pages/order_management.py",
-    "Customers": "pages/customers.py",
-    "Suppliers": "pages/suppliers.py",
-}
-
-choice = st.selectbox("Select a page:", list(options.keys()))
-
-if st.button("Go"):
-    selected_page = options[choice]
-    st.query_params(page=selected_page)
-    exec(Path(selected_page).read_text())
+st.write("Select a page from the sidebar to get started.")
