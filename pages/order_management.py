@@ -3,6 +3,10 @@ from database import get_orders
 
 st.title('Order Management')
 
+# Toon nieuwe order melding
+if new_order_message:
+    st.success(new_order_message)
+
 # Toon bestaande orders
 st.write("### Existing Orders")
 orders_df = get_orders()
