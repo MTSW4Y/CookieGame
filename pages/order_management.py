@@ -1,13 +1,9 @@
 import streamlit as st
-import sqlite3
-from database import get_connection
+from database import get_orders
 
 st.title('Order Management')
 
 # Toon bestaande orders
-with get_connection() as conn:
-    orders = conn.execute('SELECT * FROM orders').fetchall()
-
 st.write("### Existing Orders")
-for order in orders:
-    st.write(order)
+orders_df = get_orders()
+st.dataframe(orders_df)
