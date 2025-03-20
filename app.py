@@ -40,5 +40,5 @@ choice = st.selectbox("Select a page:", list(options.keys()))
 
 if st.button("Go"):
     selected_page = options[choice]
-    st.experimental_set_query_params(page=selected_page)
+    st.query_params(page=selected_page)
     exec(Path(selected_page).read_text())
