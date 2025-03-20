@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 from database import get_orders
-from app import new_order_message, last_order_time
+from app import new_order_message
 
 st.title('Order Management')
 
