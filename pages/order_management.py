@@ -11,7 +11,7 @@ st.title('Order Management')
 #         st.success(new_order_message)
 
 # Toon bestaande orders met automatische verversing
-st.write("### Existing Orders")
+st.write("### Openstaande Orders")
 orders_placeholder = st.empty()
 
 while True:
