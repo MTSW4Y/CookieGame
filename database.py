@@ -1,4 +1,5 @@
 import sqlite3
+import pandas as pd
 
 DB_PATH = 'central_database.db'
 
