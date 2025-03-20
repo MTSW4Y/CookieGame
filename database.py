@@ -13,6 +13,10 @@ def add_order(customer, stroopwafels, prince_koeken, orios):
         )
         conn.commit()
 
+def get_orders():
+    with get_connection() as conn:
+        return pd.read_sql('SELECT * FROM orders', conn)
+
 # Voeg hier alvast drie orders toe
 add_order('AH', 3, 16, 0)
 add_order('Lidl', 0, 0, 25)
