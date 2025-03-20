@@ -3,13 +3,13 @@ import sqlite3
 import threading
 import time
 import random
-from database import add_order
+# from database import add_order
 
-# Set up the SQLite database
-DB_PATH = 'central_database.db'
+# # Set up the SQLite database
+# DB_PATH = 'central_database.db'
 
-new_order_message = None
-last_order_time = None
+# new_order_message = None
+# last_order_time = None
 
 
 # def init_db():
