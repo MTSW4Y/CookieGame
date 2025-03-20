@@ -3,7 +3,7 @@ import sqlite3
 import threading
 import time
 import random
-# from database import add_order
+from database import add_order
 
 # # Set up the SQLite database
 # DB_PATH = 'central_database.db'
