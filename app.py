@@ -1,16 +1,3 @@
-### Directory Structure
-# streamlit_app/
-# ├── app.py
-# ├── pages/
-# │   ├── teams.py
-# │   ├── leaderboard.py
-# │   ├── order_management.py
-# │   ├── customers.py
-# │   └── suppliers.py
-# └── database.py
-
-
-### app.py
 import streamlit as st
 import sqlite3
 import threading
@@ -24,6 +11,7 @@ DB_PATH = 'central_database.db'
 new_order_message = None
 last_order_time = None
 
+
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
         conn.execute('''CREATE TABLE IF NOT EXISTS orders (
@@ -33,7 +21,10 @@ def init_db():
             prince_koeken INTEGER,
             orios INTEGER
         )''')
+
+
 init_db()
+
 
 # Background process for generating random orders
 CUSTOMERS = ['AH', 'Lidl', 'Jamin']
@@ -50,10 +41,12 @@ def generate_random_order():
         last_order_time = time.time()
         time.sleep(60)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
 
+
 order_thread = threading.Thread(target=generate_random_order, daemon=True)
 order_thread.start()
 
+
 # Main app layout
-st.set_page_config(page_title='The Cookie Game', layout="centered")
+st.set_page_config(page_title='Streamlit Multi-Page App', layout="centered")
 st.title("Main Menu")
 st.write("Select a page from the sidebar to get started.")
