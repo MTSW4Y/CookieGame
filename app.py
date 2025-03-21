@@ -65,3 +65,14 @@ order_thread.start()
 st.set_page_config(page_title='The Cookie Game', layout="centered")
 st.title("Main Menu")
 st.write("Select a page from the sidebar to get started.")
+
+if not st.session_state.timer_running:
+    if st.button('Start Timer'):
+        start_timer()
+else:
+    st.button('Stop Timer', on_click=stop_timer)
+
+# Toon de huidige tijd en dag
+if st.session_state.timer_running:
+    st.write(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
+
