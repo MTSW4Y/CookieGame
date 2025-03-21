@@ -39,6 +39,6 @@ order_thread.start()
 
 
 # Main app layout
-st.set_page_config(page_title='Streamlit Multi-Page App', layout="centered")
+st.set_page_config(page_title='The Cookie Game', layout="centered")
 st.title("Main Menu")
 st.write("Select a page from the sidebar to get started.")
