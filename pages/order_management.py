@@ -6,9 +6,6 @@ from database import get_orders
 st.title('Order Management')
 
 st.write("### Openstaande Orders")
-orders_placeholder = st.empty()
-
-while True:
-    orders_df = get_orders()
-    orders_placeholder.dataframe(orders_df)
-    time.sleep(10)  # Ververs de tabel elke 5 seconden
+orders_df = get_orders()
+st.dataframe(orders_df)
+st_autorefresh(interval=5000, key="order_refresh")
