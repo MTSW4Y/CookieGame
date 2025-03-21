@@ -18,8 +18,32 @@ def init_db():
             orios INTEGER
         )''')
 
-
 init_db()
+
+# Timer settings
+if 'timer_running' not in st.session_state:
+    st.session_state.timer_running = False
+    st.session_state.day_count = 1
+    st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
+    st.session_state.start_time = None
+
+def start_timer():
+    st.session_state.timer_running = True
+    st.session_state.start_time = time.time()
+
+def stop_timer():
+    st.session_state.timer_running = False
+
+# Update the timer
+if st.session_state.timer_running:
+    elapsed_real_time = time.time() - st.session_state.start_time
+    elapsed_game_time = timedelta(minutes=elapsed_real_time * 120)  # 4 minuten = 8 uur
+    st.session_state.current_time = datetime.strptime('09:00', '%H:%M') + elapsed_game_time
+
+    if st.session_state.current_time.strftime('%H:%M') >= '17:00':
+        st.session_state.day_count += 1
+        st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
+        st.session_state.start_time = time.time()  # Reset de starttijd
 
 # Background process for generating random orders
 CUSTOMERS = ['AH', 'Lidl', 'Jamin']
@@ -33,10 +57,8 @@ def generate_random_order():
         add_order(customer, stroopwafels, prince_koeken, orios)
         time.sleep(60)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
 
-
 order_thread = threading.Thread(target=generate_random_order, daemon=True)
 order_thread.start()
-
 
 # Main app layout
 st.set_page_config(page_title='The Cookie Game', layout="centered")
