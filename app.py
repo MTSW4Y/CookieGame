@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_autorefresh import st_autorefresh
 import sqlite3
 import threading
 import time
@@ -76,3 +77,4 @@ else:
 if st.session_state.timer_running:
     st.write(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
 
+st_autorefresh(interval=5000, key="order_refresh")
