@@ -62,7 +62,7 @@ def generate_random_order():
         prince_koeken = random.choice([0, 3, 6, 9])
         orios = random.choice([0, 5, 10, 15, 20, 25])
         add_order(customer, stroopwafels, prince_koeken, orios)
-        time.sleep(60)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
+        time.sleep(6000)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
 
 order_thread = threading.Thread(target=generate_random_order, daemon=True)
 order_thread.start()
