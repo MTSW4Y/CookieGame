@@ -35,6 +35,11 @@ def start_timer():
 
 def stop_timer():
     st.session_state.timer_running = False
+    reset_timer()
+
+def reset_timer():
+    st.session_state.day_count = 1
+    st.session_state.start_time = None
 
 # Update the timer
 if st.session_state.timer_running:
