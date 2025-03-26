@@ -73,8 +73,8 @@ if not st.session_state.timer_running:
 else:
     st.button('Stop Timer', on_click=stop_timer)
 
+# st_autorefresh(interval=5000, key="order_refresh")
+
 # Toon de huidige tijd en dag
 if st.session_state.timer_running:
     st.write(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
-
-st_autorefresh(interval=5000, key="order_refresh")
