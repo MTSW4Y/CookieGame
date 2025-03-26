@@ -4,6 +4,9 @@ from database import get_orders
 
 st.title('Order Management')
 
+st.write("### Dag en tijd")
+st.write(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
+
 st.write("### Openstaande Orders")
 orders_df = get_orders()
 st.dataframe(orders_df)
