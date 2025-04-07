@@ -31,7 +31,10 @@ if 'timer_running' not in st.session_state:
 
 def start_timer():
     st.session_state.timer_running = True
-    st.session_state.start_time = time.time()
+    if st.session_state.start_time:
+        pass
+    else:
+        st.session_state.start_time = time.time()
 
 def stop_timer():
     st.session_state.timer_running = False
