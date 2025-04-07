@@ -73,7 +73,7 @@ st.write("Select a page from the sidebar to get started.")
 
 st_autorefresh(interval=5000, key="order_refresh")
 
-st.button('Start Timer', on_click=start_timer):
+st.button('Start Timer', on_click=start_timer)
 st.button('Stop Timer', on_click=stop_timer)
 st.button('Reset Timer', on_click=reset_timer)
 
