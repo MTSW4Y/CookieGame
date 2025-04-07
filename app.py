@@ -35,7 +35,6 @@ def start_timer():
 
 def stop_timer():
     st.session_state.timer_running = False
-    reset_timer()
 
 def reset_timer():
     st.session_state.day_count = 1
@@ -74,11 +73,9 @@ st.write("Select a page from the sidebar to get started.")
 
 st_autorefresh(interval=5000, key="order_refresh")
 
-if not st.session_state.timer_running:
-    if st.button('Start Timer'):
-        start_timer()
-else:
-    st.button('Stop Timer', on_click=stop_timer)
+st.button('Start Timer', on_click=start_timer):
+st.button('Stop Timer', on_click=stop_timer)
+st.button('Reset Timer', on_click=reset_timer)
 
 # Toon de huidige tijd en dag
 if st.session_state.timer_running:
