@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
-from database import get_orders
+from database import get_orders, clear_orders
 
 # Timer settings
 if 'timer_running' not in st.session_state:
@@ -18,14 +18,12 @@ def start_timer():
     else:
         st.session_state.start_time = time.time()
 
-def stop_timer():
-    st.session_state.timer_running = False
-
 def reset_timer():
     st.session_state.day_count = 1
     st.session_state.start_time = None
     st.session_state.timer_running = False
     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
+    clear_orders()
 
 # Update the timer
 if st.session_state.timer_running:
