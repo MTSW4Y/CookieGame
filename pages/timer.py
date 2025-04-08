@@ -24,8 +24,8 @@ def reset_timer():
     st.session_state.start_time = None
     st.session_state.timer_running = False
     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
-    stop_event.set()
-    order_thread.join()
+    # stop_event.set()
+    # order_thread.join()
     clear_orders()
 
 # Update the timer
