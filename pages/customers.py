@@ -23,13 +23,11 @@ def dag3():
 def dag4():
   add_order("Hema", 3, 0, 6)
 
-def start_game():
-  add_order("Hema", 2, 3, 2)
-  add_order("Jumbo", 0, 4, 3)
-  add_order("AH", 0, 5, 2)
-  add_order("Hema", 3, 0, 6)
-
-
+# def start_game():
+#   add_order("Hema", 2, 3, 2)
+#   add_order("Jumbo", 0, 4, 3)
+#   add_order("AH", 0, 5, 2)
+#   add_order("Hema", 3, 0, 6)
 
 
 st.button('Start', on_click=start_game)
