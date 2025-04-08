@@ -9,19 +9,19 @@ def start_game():
   add_order("Hema", 2, 3, 2)
   add_order("Jumbo", 0, 4, 3)
   add_order("AH", 0, 5, 2)
-  add_order("Hema", 3, 0, 3)
+  add_order("Hema", 3, 0, 6)
 
 def dag1():
-  add_order("Jumbo", 0, 3, 2)
+  add_order("Jumbo", 0, 8, 4)
 
 def dag2():
   add_order("AH", 0, 4, 2)
 
 def dag3():
-  add_order("Jumbo", 2, 2, 15)
+  add_order("Jumbo", 0, 5, 3)
 
 def dag4():
-  add_order("Hema", 2, 2, 15)
+  add_order("Hema", 2, 0, 4)
 
 st.button('Start', on_click=start_game)
 st.button('na dag 1', on_click=dag1)
