@@ -29,7 +29,8 @@ def reset_timer():
     clear_orders()
 
 # Update the timer
-if st.session_state.timer_running:
+# if st.session_state.timer_running:
+if True:
     elapsed_real_time = time.time() - st.session_state.start_time
     elapsed_game_time = timedelta(seconds=elapsed_real_time * 120)  # 4 minuten = 8 uur
     st.session_state.current_time = datetime.strptime('09:00', '%H:%M') + elapsed_game_time
