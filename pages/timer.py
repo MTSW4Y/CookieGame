@@ -31,3 +31,14 @@ if st.session_state.timer_running:
         st.session_state.day_count += 1
         st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
         st.session_state.start_time = time.time()  # Reset de starttijd
+
+# Main app layout
+st.title("Timer")
+
+# st_autorefresh(interval=5000, key="order_refresh")
+
+st.button('Start Timer', on_click=start_timer)
+st.button('Stop Timer', on_click=stop_timer)
+st.button('Reset Timer', on_click=reset_timer)
+
+st.write(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
