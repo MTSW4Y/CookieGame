@@ -36,6 +36,18 @@ if st.session_state.timer_running:
         st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
         st.session_state.start_time = time.time()  # Reset de starttijd
 
+
+CUSTOMERS = ['AH', 'Lidl', 'Jamin']
+
+def generate_random_order():
+    while True:
+        customer = random.choice(CUSTOMERS)
+        stroopwafels = random.choice([0, 2, 4, 6])
+        prince_koeken = random.choice([0, 3, 6, 9])
+        orios = random.choice([0, 5, 10, 15, 20, 25])
+        add_order(customer, stroopwafels, prince_koeken, orios)
+        time.sleep(600)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
+
 # Main app layout
 st.title("Timer")
 
