@@ -2,6 +2,12 @@ import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders
 
+def start_timer():
+  pass
+
+def reset_timer():
+  pass
+
 st.title('Order Management')
 
 st_autorefresh(interval=5000, key="order_refresh")
