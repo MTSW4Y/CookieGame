@@ -46,7 +46,8 @@ CUSTOMERS = ['AH', 'Lidl', 'Jamin']
 stop_event = threading.Event()
 
 def generate_random_order():
-    while not stop_event.is_set():
+    # while not stop_event.is_set():
+    while True:
         customer = random.choice(CUSTOMERS)
         stroopwafels = random.choice([0, 2, 4, 6])
         prince_koeken = random.choice([0, 3, 6, 9])
