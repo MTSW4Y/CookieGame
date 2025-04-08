@@ -47,8 +47,14 @@ st.subheader("📜 Logs")
 
 if st.session_state.logs:
     df = pd.DataFrame(st.session_state.logs)
-    st.write(df)
-    
-    # Download logs als CSV
-    csv = df.to_csv(index=False).encode('utf-8')
+
+    # Maak de tabel bewerkbaar
+    edited_df = st.data_editor(df, num_rows="dynamic", key="editable_logs")
+
+    # Update de session_state met de aangepaste data
+    st.session_state.logs = edited_df.to_dict(orient='records')
+
+    # Download knop voor de aangepaste logs
+    csv = edited_df.to_csv(index=False).encode('utf-8')
     st.download_button("💾 Download Logs als CSV", csv, "logs.csv", "text/csv")
+    
