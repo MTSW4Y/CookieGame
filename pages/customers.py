@@ -3,24 +3,22 @@ from database import add_order
 st.title('Customers')
 st.write('Hier kunnen de klanten straks hun orders gereedmelden en aangeven of ze compleet waren en of de kwaliteit voldoende was')
 
-
-
 # add_order(customer, stroopwafels, prince_koeken, orios)
 
 def start_game():
-  add_order("Hema", 2, 2, 15)
-  add_order("Jumbo", 2, 0, 3)
-  add_order("AH", 3, 0, 2)
-  add_order("Hema", 3, 3, 0)
+  add_order("Hema", 2, 3, 2)
+  add_order("Jumbo", 0, 4, 3)
+  add_order("AH", 0, 5, 2)
+  add_order("Hema", 3, 0, 3)
 
 def dag1():
-  add_order("Hema", 2, 2, 15)
+  add_order("Jumbo", 0, 3, 2)
 
 def dag2():
-  add_order("Hema", 2, 2, 15)
+  add_order("AH", 0, 4, 2)
 
 def dag3():
-  add_order("Hema", 2, 2, 15)
+  add_order("Jumbo", 2, 2, 15)
 
 def dag4():
   add_order("Hema", 2, 2, 15)
