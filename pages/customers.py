@@ -6,7 +6,7 @@ st.write('Hier kunnen de klanten straks hun orders gereedmelden en aangeven of z
 
 
 # add_order(customer, stroopwafels, prince_koeken, orios)
-def start_game:
+def start_game():
   add_order("Hema", 2, 2, 15)
   add_order("Jumbo", 2, 0, 3)
   add_order("AH", 3, 0, 2)
