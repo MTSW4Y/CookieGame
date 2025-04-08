@@ -3,6 +3,7 @@ import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders
+import threading
 
 # Timer settings
 if 'timer_running' not in st.session_state:
@@ -23,6 +24,8 @@ def reset_timer():
     st.session_state.start_time = None
     st.session_state.timer_running = False
     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
+    stop_event.set()
+    order_thread.join()
     clear_orders()
 
 # Update the timer
@@ -39,8 +42,10 @@ if st.session_state.timer_running:
 
 CUSTOMERS = ['AH', 'Lidl', 'Jamin']
 
+stop_event = threading.Event()
+
 def generate_random_order():
-    while True:
+    while not stop_event.is_set():
         customer = random.choice(CUSTOMERS)
         stroopwafels = random.choice([0, 2, 4, 6])
         prince_koeken = random.choice([0, 3, 6, 9])
