@@ -24,6 +24,7 @@ def reset_timer():
     st.session_state.day_count = 1
     st.session_state.start_time = None
     st.session_state.timer_running = False
+    st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
 
 # Update the timer
 if st.session_state.timer_running:
