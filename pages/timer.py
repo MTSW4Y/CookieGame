@@ -36,7 +36,7 @@ def reset_timer():
 # Main app layout
 st.title("Timer")
 
-st_autorefresh(interval=5000, key="order_refresh")
+# st_autorefresh(interval=5000, key="order_refresh")
 
 st.button('Start Timer', on_click=start_timer)
 st.button('Stop Timer', on_click=stop_timer)
