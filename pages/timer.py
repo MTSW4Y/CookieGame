@@ -40,7 +40,7 @@ if st.session_state.timer_running:
 # Main app layout
 st.title("Timer")
 
-st_autorefresh(interval=5000, key="order_refresh")
+st_autorefresh(interval=1000, key="order_refresh")
 
 col1, col2 = st.columns(2)
 
