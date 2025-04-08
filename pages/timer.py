@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 # Timer settings
 if 'timer_running' not in st.session_state:
