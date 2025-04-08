@@ -22,7 +22,7 @@ def reset_timer():
     st.session_state.day_count = 1
     st.session_state.start_time = None
 
-# # Update the timer
+# Update the timer
 if st.session_state.timer_running:
     elapsed_real_time = time.time() - st.session_state.start_time
     elapsed_game_time = timedelta(seconds=elapsed_real_time * 120)  # 4 minuten = 8 uur
@@ -36,7 +36,7 @@ if st.session_state.timer_running:
 # Main app layout
 st.title("Timer")
 
-# st_autorefresh(interval=5000, key="order_refresh")
+st_autorefresh(interval=5000, key="order_refresh")
 
 st.button('Start Timer', on_click=start_timer)
 st.button('Stop Timer', on_click=stop_timer)
