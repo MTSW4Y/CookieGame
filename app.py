@@ -38,7 +38,7 @@ def start_timer():
 
 def stop_timer():
     st.session_state.timer_running = False
-    order_thread.stop()
+    # order_thread.stop()
 
 def reset_timer():
     st.session_state.day_count = 1
