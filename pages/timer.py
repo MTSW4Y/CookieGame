@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
-from database import add_order
+from database import get_orders
 
 # Timer settings
 if 'timer_running' not in st.session_state:
