@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders
 
-st.title('Openstaande orders🍪')
+st.title('🍪 - Openstaande orders')
 
 st_autorefresh(interval=5000, key="order_refresh")
 
