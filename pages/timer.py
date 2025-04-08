@@ -53,8 +53,8 @@ def generate_random_order():
         add_order(customer, stroopwafels, prince_koeken, orios)
         time.sleep(600)  # Wacht een minuut voordat een nieuwe order wordt toegevoegd
 
-# order_thread = threading.Thread(target=generate_random_order, daemon=True)
-# order_thread.start()
+order_thread = threading.Thread(target=generate_random_order, daemon=True)
+order_thread.start()
 
 # Main app layout
 st.title("Timer")
