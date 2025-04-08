@@ -32,6 +32,6 @@ def dag4():
 
 st.button('Start', on_click=start_game)
 st.button('na dag 1', on_click=dag1)
-st.button('na dag 2', on_click=dag1)
-st.button('na dag 3', on_click=dag1)
-st.button('na dag 4', on_click=dag1)
+st.button('na dag 2', on_click=dag2)
+st.button('na dag 3', on_click=dag3)
+st.button('na dag 4', on_click=dag4)
