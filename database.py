@@ -44,7 +44,9 @@ def get_times():
 def get_simulation_time():
     with get_connection() as conn:
         df = pd.read_sql('SELECT * FROM time', conn)
-        return df['simulation_time']
+        if not df.empty:
+            return df.iloc[0]['simulation_time']
+        return 'Simulatie loopt nog niet'
 
 def upsert_time(simulation_time, row_id=1):
     clock_timestamp = time.time()
