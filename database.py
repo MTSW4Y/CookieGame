@@ -40,3 +40,25 @@ def get_times():
         df = pd.read_sql('SELECT * FROM time', conn)
         # df['clock_time'] = pd.to_datetime(df['clock_time'], unit='s')  # omzetting naar leesbare datum
         return df
+
+def get_simulation_time():
+    with get_connection() as conn:
+        df = pd.read_sql('SELECT * FROM time', conn)
+        return df['simulation_time']
+
+def upsert_time(simulation_time, row_id=1):
+    clock_timestamp = time.time()
+    with get_connection() as conn:
+        cursor = conn.execute('SELECT COUNT(*) FROM time WHERE id = ?', (row_id,))
+        exists = cursor.fetchone()[0]
+        if exists:
+            conn.execute(
+                'UPDATE time SET simulation_time = ?, clock_time = ? WHERE id = ?',
+                (simulation_time, clock_timestamp, row_id)
+            )
+        else:
+            conn.execute(
+                'INSERT INTO time (id, simulation_time, clock_time) VALUES (?, ?, ?)',
+                (row_id, simulation_time, clock_timestamp)
+            )
+        conn.commit()
