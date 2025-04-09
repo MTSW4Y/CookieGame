@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
-from database import get_orders, clear_orders, add_time, get_times
+from database import get_orders, clear_orders, upsert_time, get_simulation_time
 import threading
 
 # Timer settings
@@ -71,8 +71,10 @@ with col2:
     st.button('Reset Timer', on_click=reset_timer)
 
 st.write(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
-add_time(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
+upsert_time(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
 
 st.write("### Tijden")
+st.write(get_simulation_time())
+
 # orders_df = get_orders()
-st.dataframe(get_times())
+# st.dataframe(get_times())
