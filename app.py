@@ -21,7 +21,7 @@ def init_db():
             orios INTEGER
         )''')
 
-       conn.execute('''CREATE TABLE IF NOT EXISTS time (
+        conn.execute('''CREATE TABLE IF NOT EXISTS time (
             id INTEGER PRIMARY KEY,
             simulation_time TEXT,
             clock_time TEXT
