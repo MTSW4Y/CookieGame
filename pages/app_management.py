@@ -55,7 +55,7 @@ if st.session_state.timer_running:
         st.session_state.start_time = time.time()  # Reset de starttijd
 
 # moet dit?
-stop_event = threading.Event()
+# stop_event = threading.Event()
 
 # Main app layout
 st.title("Timer")
