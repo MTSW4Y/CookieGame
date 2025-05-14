@@ -1,6 +1,6 @@
 import streamlit as st
 from database import add_order
-st.title('App Management')
+from streamlit_autorefresh import st_autorefresh
 
 # order-settings
 # dit zijn de orders die er aangemaakt worden als deze functies worden aangeroepen (door knoppen of anders)
@@ -58,7 +58,8 @@ if st.session_state.timer_running:
 # stop_event = threading.Event()
 
 # Main app layout
-st.title("Timer")
+st.title('App Management')
+# st.title("Timer")
 
 st_autorefresh(interval=1000, key="order_refresh")
 
