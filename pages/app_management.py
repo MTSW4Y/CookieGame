@@ -1,9 +1,8 @@
 import streamlit as st
 import time
 from datetime import datetime, timedelta
-from database import add_order
 from streamlit_autorefresh import st_autorefresh
-from database import get_orders, clear_orders, upsert_time, get_simulation_time
+from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order
 
 # order-settings
 # dit zijn de orders die er aangemaakt worden als deze functies worden aangeroepen (door knoppen of anders)
