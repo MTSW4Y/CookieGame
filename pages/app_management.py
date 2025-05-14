@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from database import add_order
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders, upsert_time, get_simulation_time
