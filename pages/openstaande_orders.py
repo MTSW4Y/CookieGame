@@ -6,8 +6,8 @@ st.title('🍪 - Openstaande orders')
 
 st_autorefresh(interval=1000, key="order_refresh")
 
-st.write(f"## Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
-st.write(get_simulation_time())
+st.write(f"## Dag {get_simulation_time()}")
+# st.write(get_simulation_time())
 
 orders_df = get_orders()
 st.dataframe(orders_df)
