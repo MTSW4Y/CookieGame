@@ -3,7 +3,8 @@ import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order
-from orders import start_game, dag1, dag2, dag3, dag4
+
+#########################TIMER############################
 
 def start_timer():
     st.session_state.timer_running = True
@@ -36,6 +37,29 @@ if st.session_state.timer_running:
         st.session_state.start_time = time.time()  # Reset de starttijd
 
 upsert_time(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
+due_date = f"Dag {st.session_state.day_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
+
+#########################ORDERS##################################
+
+def start_game():
+  add_order("Jumbo", due_date, 0, 8, 4)
+  add_order("AH", due_date, 0, 4, 2)
+  add_order("Jumbo", due_date, 0, 5, 3)
+  add_order("Hema", due_date, 2, 0, 4)
+
+def dag1():
+  add_order("Hema", due_date, 2, 3, 2)
+  
+def dag2():
+  add_order("Jumbo", due_date, 0, 4, 3)
+  
+def dag3():
+  add_order("AH", due_date, 0, 5, 2)
+  
+def dag4():
+  add_order("Hema", due_date, 3, 0, 6)
+
+#########################LAY-OUT##################################
 
 st.title('App Management')
 
