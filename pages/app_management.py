@@ -82,18 +82,18 @@ st.button('na dag 2', on_click=dag2)
 st.button('na dag 3', on_click=dag3)
 st.button('na dag 4', on_click=dag4)
 
-# Voeg een tekstveld toe
-naam = st.text_input("Vul je naam in:")
-beroep = st.text_input("Vul je beroep in:")
-selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
-# stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
-# oreos = st.number_input("Vul het aantal oreos in voor deze bestelling", min_value=0, max_value=10, step=1)
-# prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
-stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling")
-oreos = st.number_input("Vul het aantal oreos in voor deze bestelling")
-prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling")
+# # Voeg een tekstveld toe
+# naam = st.text_input("Vul je naam in:")
+# beroep = st.text_input("Vul je beroep in:")
+# selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
+# # stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
+# # oreos = st.number_input("Vul het aantal oreos in voor deze bestelling", min_value=0, max_value=10, step=1)
+# # prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
+# stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling")
+# oreos = st.number_input("Vul het aantal oreos in voor deze bestelling")
+# prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling")
 
 
-# Gebruik de waarde ergens
-if naam:
-    st.write(f"Hallo, {naam} je beroep is: {beroep}")
+# # Gebruik de waarde ergens
+# if naam:
+#     st.write(f"Hallo, {naam} je beroep is: {beroep}")
