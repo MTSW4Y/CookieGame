@@ -59,6 +59,9 @@ def dag3():
 def dag4():
   add_order("Hema", due_date, 3, 0, 6)
 
+def bestel(klant, stroopwafel, oreo, prince):
+  add_order("Hema", due_date, stroopwafel, oreo, prince)
+
 #########################LAY-OUT##################################
 
 st.title('App Management')
@@ -76,16 +79,17 @@ with col2:
 st.write("### Tijden")
 st.write(get_simulation_time())
 
-st.button('Start', on_click=start_game)
-st.button('na dag 1', on_click=dag1)
-st.button('na dag 2', on_click=dag2)
-st.button('na dag 3', on_click=dag3)
-st.button('na dag 4', on_click=dag4)
+st.button('Startbestelling', on_click=start_game)
+st.button('Bestelling dag 2', on_click=dag1)
+st.button('Bestelling dag 3', on_click=dag2)
+st.button('Bestelling dag 4', on_click=dag3)
+st.button('Bestelling dag 2', on_click=dag4)
 
 col3, col4 = st.columns(2)
 
 with col3:
-    selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])    
+    selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
+    st.button('Bestel', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
     
 with col4:
     stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
