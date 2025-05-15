@@ -68,7 +68,7 @@ st.title('App Management')
 
 st_autorefresh(interval=1000, key="order_refresh")
 
-st.write(f"### Timer   {get_simulation_time()}")
+st.write(f"### {get_simulation_time()}")
 
 col1, col2 = st.columns(2)
 
