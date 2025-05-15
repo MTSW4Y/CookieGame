@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-from datetime import datetime
+# from datetime import datetime
+from database import get_simulation_time
 
 # Sla logs en dynamische knoppen op in session state
 if 'logs' not in st.session_state:
@@ -11,8 +12,9 @@ if 'dynamic_buttons' not in st.session_state:
 
 # Functie om een timestamp toe te voegen
 def log_action(action):
-    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    st.session_state.logs.append({'Action': action, 'Timestamp': timestamp})
+    # timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    # timestamp = get_simulation_time()
+    st.session_state.logs.append({'Action': action, 'Timestamp':  get_simulation_time()})
 
 # UI Titel
 st.title("🕰️ Koekjesgame Module 4")
