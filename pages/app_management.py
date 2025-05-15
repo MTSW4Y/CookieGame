@@ -80,18 +80,24 @@ st.write("### Tijden")
 st.write(get_simulation_time())
 
 st.button('Startbestelling', on_click=start_game)
-st.button('Bestelling dag 2', on_click=dag1)
-st.button('Bestelling dag 3', on_click=dag2)
-st.button('Bestelling dag 4', on_click=dag3)
-st.button('Bestelling dag 5', on_click=dag4)
 
 col3, col4 = st.columns(2)
-    
+
 with col3:
+    st.button('Bestelling dag 2', on_click=dag1)
+    st.button('Bestelling dag 4', on_click=dag3)
+
+with col4:
+    st.button('Bestelling dag 3', on_click=dag2)
+    st.button('Bestelling dag 5', on_click=dag4)
+
+col5, col6 = st.columns(2)
+    
+with col5:
     stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
     oreos = st.number_input("Vul het aantal oreos in voor deze bestelling", min_value=0, max_value=10, step=1)
     prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
     
-with col4:
+with col6:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
     st.button('Bestel', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
