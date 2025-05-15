@@ -60,7 +60,7 @@ def dag4():
   add_order("Hema", due_date, 3, 0, 6)
 
 def bestel(klant, stroopwafel, oreo, prince):
-  add_order("Hema", due_date, stroopwafel, oreo, prince)
+  add_order(klant, due_date, stroopwafel, oreo, prince)
 
 #########################LAY-OUT##################################
 
@@ -94,6 +94,4 @@ with col3:
     
 with col4:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
-    st.write(klant)
     st.button('Bestel', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
-    # st.button('Bestel', on_click=dag4)
