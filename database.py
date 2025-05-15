@@ -17,7 +17,7 @@ def add_order(customer, due_date, stroopwafels, prince_koeken, orios):
 
 def get_orders():
     with get_connection() as conn:
-        return pd.read_sql('SELECT * FROM orders ORDER BY id DESC', conn)
+        return pd.read_sql('SELECT * FROM orders ORDER BY id DESC', conn).reset_index(drop=True)
 
 def clear_orders():
     with get_connection() as conn:
