@@ -83,7 +83,7 @@ st.button('Startbestelling', on_click=start_game)
 st.button('Bestelling dag 2', on_click=dag1)
 st.button('Bestelling dag 3', on_click=dag2)
 st.button('Bestelling dag 4', on_click=dag3)
-st.button('Bestelling dag 2', on_click=dag4)
+st.button('Bestelling dag 5', on_click=dag4)
 
 col3, col4 = st.columns(2)
     
@@ -94,4 +94,4 @@ with col3:
     
 with col4:
     selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
-    # st.button('Bestellenmaar', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
+    st.button('Bestellenmaar', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
