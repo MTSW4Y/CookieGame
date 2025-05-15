@@ -86,6 +86,9 @@ st.button('na dag 4', on_click=dag4)
 naam = st.text_input("Vul je naam in:")
 beroep = st.text_input("Vul je beroep in:")
 selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
+stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling")
+oreos = st.number_input("Vul het aantal oreos in voor deze bestelling")
+prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling")
 
 # Gebruik de waarde ergens
 if naam:
