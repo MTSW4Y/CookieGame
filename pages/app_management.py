@@ -5,26 +5,6 @@ from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order
 from orders import start_game, dag1, dag2, dag3, dag4
 
-# def start_game():
-#   add_order("Jumbo", 0, 8, 4)
-#   add_order("AH", 0, 4, 2)
-#   add_order("Jumbo", 0, 5, 3)
-#   add_order("Hema", 2, 0, 4)
-
-# def dag1():
-#   add_order("Hema", 2, 3, 2)
-  
-# def dag2():
-#   add_order("Jumbo", 0, 4, 3)
-  
-# def dag3():
-#   add_order("AH", 0, 5, 2)
-  
-# def dag4():
-#   add_order("Hema", 3, 0, 6)
-
-# Timer settings
-# dit is nodig om de timer te laten lopen
 def start_timer():
     st.session_state.timer_running = True
     if st.session_state.start_time:
@@ -55,6 +35,8 @@ if st.session_state.timer_running:
         st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
         st.session_state.start_time = time.time()  # Reset de starttijd
 
+upsert_time(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
+
 st.title('App Management')
 
 st_autorefresh(interval=1000, key="order_refresh")
@@ -66,9 +48,6 @@ with col1:
 
 with col2:
     st.button('Reset Timer', on_click=reset_timer)
-
-st.write(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
-upsert_time(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
 
 st.write("### Tijden")
 st.write(get_simulation_time())
