@@ -25,22 +25,6 @@ def clear_orders():
         conn.execute('DELETE FROM orders')
         conn.commit()
 
-# def add_time(simulation_time):
-#     # clock_timestamp = int(time.time())  # Unix timestamp
-#     clock_timestamp = time.time()
-#     with get_connection() as conn:
-#         conn.execute(
-#             'INSERT INTO time (simulation_time, clock_time) VALUES (?, ?)',
-#             (simulation_time, clock_timestamp)
-#         )
-#         conn.commit()
-
-# def get_times():
-#     with get_connection() as conn:
-#         df = pd.read_sql('SELECT * FROM time', conn)
-#         # df['clock_time'] = pd.to_datetime(df['clock_time'], unit='s')  # omzetting naar leesbare datum
-#         return df
-
 def get_simulation_time():
     with get_connection() as conn:
         df = pd.read_sql('SELECT * FROM time', conn)
