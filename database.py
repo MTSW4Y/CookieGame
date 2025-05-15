@@ -1,16 +1,14 @@
 import sqlite3
 import pandas as pd
 import time
-# from datetime import datetime
 
 DB_PATH = 'central_database.db'
 
 def get_connection():
     return sqlite3.connect(DB_PATH)
 
-def add_order(customer, stroopwafels, prince_koeken, orios):
+def add_order(customer, due_date, stroopwafels, prince_koeken, orios):
     with get_connection() as conn:
-        due_date = get_simulation_time()
         conn.execute(
             'INSERT INTO orders (customer,due_date, stroopwafels, prince_koeken, orios) VALUES (?, ?, ?, ?, ?)',
             (customer, due_date, stroopwafels, prince_koeken, orios)
