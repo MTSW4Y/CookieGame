@@ -23,7 +23,7 @@ from orders import start_game, dag1, dag2, dag3, dag4
 # def dag4():
 #   add_order("Hema", 3, 0, 6)
 
-Timer settings
+# Timer settings
 # dit is nodig om de timer te laten lopen
 def start_timer():
     st.session_state.timer_running = True
