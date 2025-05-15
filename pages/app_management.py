@@ -3,7 +3,7 @@ import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order
-from time import start_timer, reset_timer
+from timer import start_timer, reset_timer
 
 # order-settings
 # dit zijn de orders die er aangemaakt worden als deze functies worden aangeroepen (door knoppen of anders)
