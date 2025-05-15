@@ -10,9 +10,10 @@ def get_connection():
 
 def add_order(customer, stroopwafels, prince_koeken, orios):
     with get_connection() as conn:
+        due_date = get_simulation_time()
         conn.execute(
-            'INSERT INTO orders (customer, stroopwafels, prince_koeken, orios) VALUES (?, ?, ?, ?)',
-            (customer, stroopwafels, prince_koeken, orios)
+            'INSERT INTO orders (customer,due_date, stroopwafels, prince_koeken, orios) VALUES (?, ?, ?, ?, ?)',
+            (customer, due_date, stroopwafels, prince_koeken, orios)
         )
         conn.commit()
 
