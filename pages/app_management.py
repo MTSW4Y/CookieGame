@@ -81,3 +81,10 @@ st.button('na dag 1', on_click=dag1)
 st.button('na dag 2', on_click=dag2)
 st.button('na dag 3', on_click=dag3)
 st.button('na dag 4', on_click=dag4)
+
+# Voeg een tekstveld toe
+naam = st.text_input("Vul je naam in:")
+
+# Gebruik de waarde ergens
+if naam:
+    st.write(f"Hallo, {naam}!")
