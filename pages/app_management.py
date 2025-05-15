@@ -3,6 +3,7 @@ import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order
+from time import start_timer, reset_timer
 
 # order-settings
 # dit zijn de orders die er aangemaakt worden als deze functies worden aangeroepen (door knoppen of anders)
@@ -25,20 +26,20 @@ def dag4():
   add_order("Hema", 3, 0, 6)
 
 # Timer settings
-# dit is nodig om de timer te laten lopen
-def start_timer():
-    st.session_state.timer_running = True
-    if st.session_state.start_time:
-        pass
-    else:
-        st.session_state.start_time = time.time()
+# # dit is nodig om de timer te laten lopen
+# def start_timer():
+#     st.session_state.timer_running = True
+#     if st.session_state.start_time:
+#         pass
+#     else:
+#         st.session_state.start_time = time.time()
 
-def reset_timer():
-    st.session_state.day_count = 1
-    st.session_state.start_time = None
-    st.session_state.timer_running = False
-    st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
-    clear_orders()
+# def reset_timer():
+#     st.session_state.day_count = 1
+#     st.session_state.start_time = None
+#     st.session_state.timer_running = False
+#     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
+#     clear_orders()
   
 if 'timer_running' not in st.session_state:
     st.session_state.timer_running = False
