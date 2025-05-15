@@ -94,5 +94,4 @@ with col3:
     
 with col4:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
-
-st.button('Bestellenmaar', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
+    st.button('Bestel', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
