@@ -64,9 +64,11 @@ def bestel(klant, stroopwafel, oreo, prince):
 
 #########################LAY-OUT##################################
 
-st.title('App Management')
+st.title(f'App Management      {get_simulation_time()}')
 
 st_autorefresh(interval=1000, key="order_refresh")
+
+st.write("### Timer")
 
 col1, col2 = st.columns(2)
 
@@ -76,8 +78,7 @@ with col1:
 with col2:
     st.button('Reset Timer', on_click=reset_timer)
 
-st.write("### Tijden")
-st.write(get_simulation_time())
+st.write("### Standaardbestellingen")
 
 st.button('Startbestelling', on_click=start_game)
 
@@ -90,6 +91,8 @@ with col3:
 with col4:
     st.button('Bestelling dag 3', on_click=dag2)
     st.button('Bestelling dag 5', on_click=dag4)
+
+st.write("### Specifieke bestellingen")
 
 col5, col6 = st.columns(2)
     
