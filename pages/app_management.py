@@ -60,7 +60,7 @@ def dag4():
   add_order("Hema", due_date, 3, 0, 6)
 
 def bestel(klant, stroopwafel, oreo, prince):
-  add_order(klant, due_date, stroopwafel, oreo, prince)
+  add_order(klant, due_date, stroopwafel, prince, oreo)
 
 #########################LAY-OUT##################################
 
