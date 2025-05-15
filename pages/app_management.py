@@ -93,5 +93,5 @@ with col3:
     prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
     
 with col4:
-    selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
+    klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
     st.button('Bestellenmaar', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
