@@ -86,14 +86,12 @@ st.button('Bestelling dag 4', on_click=dag3)
 st.button('Bestelling dag 2', on_click=dag4)
 
 col3, col4 = st.columns(2)
-
-with col3:
-    selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
-    st.button('Bestel', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
     
-with col4:
+with col3:
     stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
     oreos = st.number_input("Vul het aantal oreos in voor deze bestelling", min_value=0, max_value=10, step=1)
     prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
     
-    
+with col4:
+    selectie = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
+    st.button('Bestel', on_click=bestel(klant, stroopwafels, oreos, prince_koeken))
