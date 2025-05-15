@@ -3,43 +3,41 @@ import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order
-from timer import start_timer, reset_timer
+from orders import start_game, dag1, dag2, dag3, dag4
 
-# order-settings
-# dit zijn de orders die er aangemaakt worden als deze functies worden aangeroepen (door knoppen of anders)
-def start_game():
-  add_order("Jumbo", 0, 8, 4)
-  add_order("AH", 0, 4, 2)
-  add_order("Jumbo", 0, 5, 3)
-  add_order("Hema", 2, 0, 4)
+# def start_game():
+#   add_order("Jumbo", 0, 8, 4)
+#   add_order("AH", 0, 4, 2)
+#   add_order("Jumbo", 0, 5, 3)
+#   add_order("Hema", 2, 0, 4)
 
-def dag1():
-  add_order("Hema", 2, 3, 2)
+# def dag1():
+#   add_order("Hema", 2, 3, 2)
   
-def dag2():
-  add_order("Jumbo", 0, 4, 3)
+# def dag2():
+#   add_order("Jumbo", 0, 4, 3)
   
-def dag3():
-  add_order("AH", 0, 5, 2)
+# def dag3():
+#   add_order("AH", 0, 5, 2)
   
-def dag4():
-  add_order("Hema", 3, 0, 6)
+# def dag4():
+#   add_order("Hema", 3, 0, 6)
 
-# Timer settings
-# # dit is nodig om de timer te laten lopen
-# def start_timer():
-#     st.session_state.timer_running = True
-#     if st.session_state.start_time:
-#         pass
-#     else:
-#         st.session_state.start_time = time.time()
+Timer settings
+# dit is nodig om de timer te laten lopen
+def start_timer():
+    st.session_state.timer_running = True
+    if st.session_state.start_time:
+        pass
+    else:
+        st.session_state.start_time = time.time()
 
-# def reset_timer():
-#     st.session_state.day_count = 1
-#     st.session_state.start_time = None
-#     st.session_state.timer_running = False
-#     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
-#     clear_orders()
+def reset_timer():
+    st.session_state.day_count = 1
+    st.session_state.start_time = None
+    st.session_state.timer_running = False
+    st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
+    clear_orders()
   
 if 'timer_running' not in st.session_state:
     st.session_state.timer_running = False
@@ -57,12 +55,7 @@ if st.session_state.timer_running:
         st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
         st.session_state.start_time = time.time()  # Reset de starttijd
 
-# moet dit?
-# stop_event = threading.Event()
-
-# Main app layout
 st.title('App Management')
-# st.title("Timer")
 
 st_autorefresh(interval=1000, key="order_refresh")
 
