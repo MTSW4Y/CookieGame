@@ -27,4 +27,4 @@ with col3:
 
 
 if st.button('Registeer', on_click=lambda: registreer(groep, ordernummer)):
-    st.toast("✔️ Opgeslagen!", icon="✅")
+    st.toast("Order gereedgemeld", icon="✅")
