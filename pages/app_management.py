@@ -19,7 +19,7 @@ def reset_timer():
     st.session_state.timer_running = False
     st.session_state.current_time = datetime.strptime('08:00', '%H:%M')
     st.session_state.last_hour = 8
-    st.session_state.hour_count = 1
+    st.session_state.delivery_slot = 1
     st.session_state.timer_running = False
     clear_orders()
    
@@ -30,12 +30,12 @@ if st.session_state.timer_running:
     
     current_hour = st.session_state.current_time.hour
     if current_hour != st.session_state.last_hour:
-        st.session_state.hour_count += 1
+        st.session_state.delivery_slot += 1
         st.session_state.last_hour = current_hour
 
-upsert_time(f"Levermoment {st.session_state.hour_count}: {st.session_state.current_time.strftime('%H:%M')}")
-due_date = f"Levermoment {st.session_state.hour_count+2}"
-spoed_due_date = f"Levermoment {st.session_state.hour_count+1}"
+upsert_time(f"Levermoment {st.session_state.delivery_slot}: {st.session_state.current_time.strftime('%H:%M')}")
+due_date = f"Levermoment {st.session_state.delivery_slot+2}"
+spoed_due_date = f"Levermoment {st.session_state.delivery_slot+1}"
 
 #########################ORDERS##################################
 
@@ -66,7 +66,7 @@ st.title('App Management')
 
 st_autorefresh(interval=1000, key="order_refresh")
 
-st.write(f"### {get_simulation_time()} llllllll")
+st.write(f"### {get_simulation_time()}")
 
 col1, col2 = st.columns(2)
 
@@ -103,5 +103,4 @@ with col6:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
     st.button('Bestel', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
 
-st.write(f"⏱️ Uren verstreken: {st.session_state.hour_count}")
-
+st.write(f"⏱️ Uren verstreken: {st.session_state.delivery_slot}")
