@@ -102,6 +102,6 @@ with col5:
     
 with col6:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
-    st.button('Bestel', on_click=lambda: add_order(order['Klant'], f"Levermoment {st.session_state.delivery_slot + 1}", stroopwafels, prince_koeken, oreos))
+    st.button('Bestel', on_click=lambda: add_order(klant, f"Levermoment {st.session_state.delivery_slot + 1}", stroopwafels, prince_koeken, oreos))
 
 st.write(st.session_state.last_hour)
