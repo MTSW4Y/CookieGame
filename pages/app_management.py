@@ -20,7 +20,7 @@ def reset_timer():
     st.session_state.timer_running = False
     st.session_state.current_time = datetime.strptime('08:00', '%H:%M')
     st.session_state.last_hour = 8
-    current_hour = 8
+    st.session_state.hour_count = 8
     clear_orders()
   
 if 'timer_running' not in st.session_state:
@@ -28,7 +28,7 @@ if 'timer_running' not in st.session_state:
     st.session_state.day_count = 1
     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
     st.session_state.last_hour = 8
-    current_hour = 8
+    st.session_state.hour_count = 8
     st.session_state.start_time = None
   
 if st.session_state.timer_running:
