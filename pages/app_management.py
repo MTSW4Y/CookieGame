@@ -22,6 +22,9 @@ def reset_timer():
     st.session_state.delivery_slot = 1
     st.session_state.timer_running = False
     clear_orders()
+
+if 'timer_running' not in st.session_state:
+    st.session_state.timer_running = False
    
 if st.session_state.timer_running:
     elapsed_real_time = time.time() - st.session_state.start_time
