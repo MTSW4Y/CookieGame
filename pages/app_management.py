@@ -25,7 +25,7 @@ orders = [
     
 def schiet_nieuwe_orders_in():
     for order in orders:
-        if order['Uur'] == st.session_state.last_hour:
+        if order['Uur'] == st.session_state.last_hour + 1:
             add_order(order['Klant'], f"Levermoment {order['Due']}", order['Stroopwafels'], order['Prince'], order['Oreos'])
 
 #########################TIMER############################
