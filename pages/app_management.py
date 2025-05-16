@@ -66,7 +66,7 @@ orders = [
     
 def schiet_nieuwe_orders_in():
     for order in orders:
-        if order['uur'] == st.session_state.last_hour:
+        if order['Uur'] == st.session_state.last_hour:
             add_order(order['Klant'], order['Due'], order['Stroopwafels'], order['Prince'], order['Oreos'])
 
 # def start_game():
