@@ -14,7 +14,7 @@ def init_db():
             orios INTEGER
         )''')
 
-       conn.execute('''CREATE TABLE IF NOT EXISTS ready_orders (
+        conn.execute('''CREATE TABLE IF NOT EXISTS ready_orders (
             id INTEGER PRIMARY KEY,
             groep INTEGER,
             order INTEGER,
