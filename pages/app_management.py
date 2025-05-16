@@ -23,6 +23,8 @@ orders = [
     {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 4, "Prince": 0, "Oreos": 20}
 ]
 
+# dit moet ik nog even opslimmen..........
+
 def schiet_eerste_order_in():
     for order in orders:
         if order['Uur'] == st.session_state.last_hour:
