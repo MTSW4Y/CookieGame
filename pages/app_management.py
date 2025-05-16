@@ -37,8 +37,9 @@ if st.session_state.timer_running:
         st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
         st.session_state.start_time = time.time()  # Reset de starttijd
 
-upsert_time(f"Dag {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
-due_date = f"Dag {st.session_state.day_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
+upsert_time(f"Levermoment {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
+due_date = f"Levermoment {st.session_state.day_count+2} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
+spoed_due_date = f"Levermoment {st.session_state.day_count+2} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
 
 #########################ORDERS##################################
 
@@ -61,7 +62,7 @@ def dag4():
   add_order("Hema", due_date, 3, 0, 6)
 
 def bestel(klant, stroopwafel, oreo, prince):
-  add_order(klant, due_date, stroopwafel, prince, oreo)
+  add_order(klant, spoed_due_date, stroopwafel, prince, oreo)
 
 #########################LAY-OUT##################################
 
