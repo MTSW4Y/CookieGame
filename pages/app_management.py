@@ -19,6 +19,7 @@ def reset_timer():
     st.session_state.timer_running = False
     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
     clear_orders()
+    get_simulation_time()
   
 if 'timer_running' not in st.session_state:
     st.session_state.timer_running = False
