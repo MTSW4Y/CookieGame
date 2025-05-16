@@ -12,6 +12,7 @@ def start_timer():
         pass
     else:
         st.session_state.start_time = time.time()
+        start_game()
 
 def reset_timer():
     st.session_state.day_count = 1
@@ -19,7 +20,6 @@ def reset_timer():
     st.session_state.timer_running = False
     st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
     clear_orders()
-    get_simulation_time()
   
 if 'timer_running' not in st.session_state:
     st.session_state.timer_running = False
