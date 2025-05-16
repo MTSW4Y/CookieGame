@@ -37,7 +37,7 @@ if st.session_state.timer_running:
             st.session_state.delivery_slot += 1
         st.session_state.last_hour = current_hour
 
-if current_hour == 4:
+if st.session_state.last_hour == 4:
     upsert_time(f"Lunchpauze: {st.session_state.current_time.strftime('%H:%M')}")
 else:
     upsert_time(f"Levermoment {st.session_state.delivery_slot}: {st.session_state.current_time.strftime('%H:%M')}")
