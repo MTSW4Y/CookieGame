@@ -111,3 +111,5 @@ with col6:
     st.button('Bestel', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
 
 st.write(f"⏱️ Uren verstreken: {st.session_state.delivery_slot}")
+st.write(f"Laatste uur: {st.session_state.last_hour}")
+
