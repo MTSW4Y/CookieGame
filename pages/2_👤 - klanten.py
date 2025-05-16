@@ -1,5 +1,8 @@
 import streamlit as st
 
+def registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken):
+    pass
+
 st.title('👤 - Klanten')
 
 st.write("### Gereedmelden order")
@@ -23,4 +26,4 @@ with col3:
     kwal_oreos = st.number_input("Goede oreos", step=1, value=gel_aant_oreos)
     kwal_prince_koeken = st.number_input("Goede prince koeken", step=1, value=gel_aant_prince_koeken)
 
-st.button('Registeer', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
+st.button('Registeer', on_click=lambda: registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken) )
