@@ -18,7 +18,7 @@ def reset_timer():
     st.session_state.day_count = 1
     st.session_state.start_time = None
     st.session_state.timer_running = False
-    st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
+    st.session_state.current_time = datetime.strptime('08:00', '%H:%M')
     clear_orders()
   
 if 'timer_running' not in st.session_state:
@@ -29,17 +29,17 @@ if 'timer_running' not in st.session_state:
   
 if st.session_state.timer_running:
     elapsed_real_time = time.time() - st.session_state.start_time
-    elapsed_game_time = timedelta(seconds=elapsed_real_time * 120)  # 4 minuten = 8 uur
-    st.session_state.current_time = datetime.strptime('09:00', '%H:%M') + elapsed_game_time
+    elapsed_game_time = timedelta(seconds=elapsed_real_time * 108)  # 5 minuten = 9 uur
+    st.session_state.current_time = datetime.strptime('08:00', '%H:%M') + elapsed_game_time
 
-    if st.session_state.current_time.strftime('%H:%M') >= '17:00':
-        st.session_state.day_count += 1
-        st.session_state.current_time = datetime.strptime('09:00', '%H:%M')
-        st.session_state.start_time = time.time()  # Reset de starttijd
+    # if st.session_state.current_time.strftime('%H:%M') >= '17:00':
+    #     st.session_state.day_count += 1
+    #     st.session_state.current_time = datetime.strptime('08:00', '%H:%M')
+    #     st.session_state.start_time = time.time()  # Reset de starttijd
 
 upsert_time(f"Levermoment {st.session_state.day_count} - Tijd: {st.session_state.current_time.strftime('%H:%M')}")
-due_date = f"Levermoment {st.session_state.day_count+2} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
-spoed_due_date = f"Levermoment {st.session_state.day_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
+# due_date = f"Levermoment {st.session_state.day_count+2} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
+# spoed_due_date = f"Levermoment {st.session_state.day_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
 
 #########################ORDERS##################################
 
