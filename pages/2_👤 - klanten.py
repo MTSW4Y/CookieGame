@@ -17,8 +17,8 @@ with col2:
     gel_aant_prince_koeken = st.number_input("Vul het aantal geleverde prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
 
 with col3:
-    kwal_stroopwafels = st.number_input("Vul het aantal geleverde stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
-    kwal_oreos = st.number_input("Vul het aantal geleverde oreos in voor deze bestelling", min_value=0, max_value=10, step=1)
-    kwal_prince_koeken = st.number_input("Vul het aantal geleverde prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
+    kwal_stroopwafels = st.number_input("Vul het aantal geleverde stroopwafels in van goede kwaliteit", min_value=0, max_value=10, step=1)
+    kwal_oreos = st.number_input("Vul het aantal geleverde oreos in van goede kwaliteit", min_value=0, max_value=10, step=1)
+    kwal_prince_koeken = st.number_input("Vul het aantal geleverde prince koeken in van goede kwaliteit", min_value=0, max_value=10, step=1)
 
 st.button('Registeer', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
