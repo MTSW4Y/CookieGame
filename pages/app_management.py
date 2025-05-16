@@ -15,7 +15,7 @@ def start_timer():
         start_game()
 
 def reset_timer():
-    del st.session_state.hour_count
+    del st.session_state.timer_running
     clear_orders()
 
 if 'timer_running' not in st.session_state:
