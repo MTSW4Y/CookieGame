@@ -67,7 +67,7 @@ def bestel(klant, stroopwafel, oreo, prince):
 
 st.title('App Management')
 
-st_autorefresh(interval=1000, key="order_refresh")
+# st_autorefresh(interval=1000, key="order_refresh")
 
 st.write(f"### {get_simulation_time()}")
 
