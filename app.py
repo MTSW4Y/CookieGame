@@ -14,6 +14,18 @@ def init_db():
             orios INTEGER
         )''')
 
+       conn.execute('''CREATE TABLE IF NOT EXISTS ready_orders (
+            id INTEGER PRIMARY KEY,
+            groep TEXT,
+            ready_date TEXT,
+            gel_stroopwafels INTEGER,
+            gel_prince_koeken INTEGER,
+            gel_orios INTEGER,
+            goede_stroopwafels INTEGER,
+            goede_prince_koeken INTEGER,
+            goede_orios INTEGER
+        )''')
+
         conn.execute('''CREATE TABLE IF NOT EXISTS time (
             id INTEGER PRIMARY KEY,
             simulation_time TEXT,
