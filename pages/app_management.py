@@ -93,7 +93,7 @@ with col2:
 #     st.button('Bestelling dag 3', on_click=dag2)
 #     st.button('Bestelling dag 5', on_click=dag4)
 
-st.write("### Specifieke bestellingen")
+st.write("### Spoed bestellingen")
 
 col5, col6 = st.columns(2)
     
