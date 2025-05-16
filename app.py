@@ -16,7 +16,8 @@ def init_db():
 
        conn.execute('''CREATE TABLE IF NOT EXISTS ready_orders (
             id INTEGER PRIMARY KEY,
-            groep TEXT,
+            groep INTEGER,
+            order INTEGER,
             ready_date TEXT,
             gel_stroopwafels INTEGER,
             gel_prince_koeken INTEGER,
