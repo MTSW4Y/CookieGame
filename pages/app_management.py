@@ -48,7 +48,7 @@ if st.session_state.timer_running:
 
 upsert_time(f"Levermoment {st.session_state.day_count}: {st.session_state.current_time.strftime('%H:%M')}")
 # due_date = f"Levermoment {st.session_state.day_count+2} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
-spoed_due_date = f"Levermoment {st.session_state.day_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
+spoed_due_date = f"Levermoment {st.session_state.hour_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
 
 #########################ORDERS##################################
 
@@ -116,5 +116,5 @@ with col6:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
     st.button('Bestel', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
 
-st.write(f"⏱️ Uren verstreken vandaag: {st.session_state.hour_count}")
+st.write(f"⏱️ Uren verstreken: {st.session_state.hour_count}")
 
