@@ -1,6 +1,6 @@
 import streamlit as st
 
-def registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken):
+def registreer(groep, ordernummer):
     pass
 
 st.title('👤 - Klanten')
@@ -20,4 +20,4 @@ with col2:
 with col3:
     pass
 
-st.button('Registeer', on_click=lambda: registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken) )
+st.button('Registeer', on_click=lambda: registreer(groep, ordernummer))
