@@ -67,7 +67,7 @@ def bestel(klant, stroopwafel, oreo, prince):
 
 st.title('App Management')
 
-# st_autorefresh(interval=1000, key="order_refresh")
+st_autorefresh(interval=1000, key="order_refresh")
 
 st.write(f"### {get_simulation_time()}")
 
@@ -79,19 +79,19 @@ with col1:
 with col2:
     st.button('Reset Timer', on_click=reset_timer)
 
-st.write("### Standaardbestellingen")
+# st.write("### Standaardbestellingen")
 
-st.button('Startbestelling', on_click=start_game)
+# st.button('Startbestelling', on_click=start_game)
 
-col3, col4 = st.columns(2)
+# col3, col4 = st.columns(2)
 
-with col3:
-    st.button('Bestelling dag 2', on_click=dag1)
-    st.button('Bestelling dag 4', on_click=dag3)
+# with col3:
+#     st.button('Bestelling dag 2', on_click=dag1)
+#     st.button('Bestelling dag 4', on_click=dag3)
 
-with col4:
-    st.button('Bestelling dag 3', on_click=dag2)
-    st.button('Bestelling dag 5', on_click=dag4)
+# with col4:
+#     st.button('Bestelling dag 3', on_click=dag2)
+#     st.button('Bestelling dag 5', on_click=dag4)
 
 st.write("### Specifieke bestellingen")
 
