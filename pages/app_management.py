@@ -48,7 +48,7 @@ if st.session_state.timer_running:
 
 upsert_time(f"Levermoment {st.session_state.day_count}: {st.session_state.current_time.strftime('%H:%M')}")
 # due_date = f"Levermoment {st.session_state.day_count+2} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
-# spoed_due_date = f"Levermoment {st.session_state.day_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
+spoed_due_date = f"Levermoment {st.session_state.day_count+1} - Tijd: {st.session_state.current_time.strftime('%H:%M')}"
 
 #########################ORDERS##################################
 
