@@ -20,7 +20,11 @@ with col2:
 with col3:
     pass
 
-st.button('Registeer', on_click=lambda: registreer(groep, ordernummer))
+# st.button('Registeer', on_click=lambda: registreer(groep, ordernummer))
 
-if st.button('Registeer'):
+# if st.button('Registeer'):
+#     st.toast("✔️ Opgeslagen!", icon="✅")
+
+
+if st.button('Registeer', on_click=lambda: registreer(groep, ordernummer)):
     st.toast("✔️ Opgeslagen!", icon="✅")
