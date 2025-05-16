@@ -118,3 +118,5 @@ with col5:
 with col6:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
     st.button('Bestel', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
+
+st.write(st.session_state.last_hour)
