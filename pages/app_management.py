@@ -22,7 +22,12 @@ orders = [
     {"Uur": 14, "Klant": "Jumbo", "Due": 8, "Stroopwafels": 0, "Prince": 8, "Oreos": 16},
     {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 4, "Prince": 0, "Oreos": 20}
 ]
-    
+
+def schiet_eerste_order_in():
+    for order in orders:
+        if order['Uur'] == st.session_state.last_hour:
+            add_order(order['Klant'], f"Levermoment {order['Due']}", order['Stroopwafels'], order['Prince'], order['Oreos'])
+            
 def schiet_nieuwe_orders_in():
     for order in orders:
         if order['Uur'] == st.session_state.last_hour + 1:
@@ -36,7 +41,7 @@ def start_timer():
         pass
     else:
         st.session_state.start_time = time.time()
-        schiet_nieuwe_orders_in()
+        schiet_eerste_order_in()
         # start_game()
 
 def reset_timer():
