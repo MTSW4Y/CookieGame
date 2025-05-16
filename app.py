@@ -1,6 +1,5 @@
 import sqlite3
 
-
 # Set up the SQLite database
 DB_PATH = 'central_database.db'
 
