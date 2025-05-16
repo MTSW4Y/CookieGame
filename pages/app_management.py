@@ -27,6 +27,7 @@ if 'timer_running' not in st.session_state:
     st.session_state.timer_running = False
     st.session_state.delivery_slot = 0
     st.session_state.current_time = datetime.strptime('08:00', '%H:%M')
+    st.session_state.start_time = None
    
 if st.session_state.timer_running:
     elapsed_real_time = time.time() - st.session_state.start_time
