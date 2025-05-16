@@ -33,7 +33,7 @@ if st.session_state.timer_running:
     
     current_hour = st.session_state.current_time.hour
     if current_hour != st.session_state.last_hour:
-        if current_hour = 4:
+        if current_hour == 4:
             st.session_state.delivery_slot = "Lunch"
         else:
             st.session_state.delivery_slot += 1
