@@ -12,7 +12,8 @@ def start_timer():
         pass
     else:
         st.session_state.start_time = time.time()
-        start_game()
+        schiet_nieuwe_orders_in()
+        # start_game()
 
 def reset_timer():
     del st.session_state.timer_running
@@ -46,26 +47,48 @@ spoed_due_date = f"Levermoment {st.session_state.delivery_slot+1}"
 
 #########################ORDERS##################################
 
-def start_game():
-  add_order("Jumbo", due_date, 0, 8, 4)
-  add_order("AH", due_date, 0, 4, 2)
-  add_order("Jumbo", due_date, 0, 5, 3)
-  add_order("Hema", due_date, 2, 0, 4)
+orders = [
+    {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 6, "Prince": 3, "Oreos": 13},
+    {"Uur": 8, "Klant": "Jumbo", "Due": 2, "Stroopwafels": 0, "Prince": 8, "Oreos": 19},
+    {"Uur": 8, "Klant": "AH", "Due": 3, "Stroopwafels": 0, "Prince": 5, "Oreos": 30},
+    {"Uur": 8, "Klant": "Hema", "Due": 3, "Stroopwafels": 9, "Prince": 0, "Oreos": 19},
+    {"Uur": 9, "Klant": "Jumbo", "Due": 4, "Stroopwafels": 0, "Prince": 3, "Oreos": 13},
+    {"Uur": 9, "Klant": "AH", "Due": 4, "Stroopwafels": 0, "Prince": 4, "Oreos": 13},
+    {"Uur": 10, "Klant": "Jumbo", "Due": 5, "Stroopwafels": 0, "Prince": 5, "Oreos": 19},
+    {"Uur": 10, "Klant": "Hema", "Due": 5, "Stroopwafels": 6, "Prince": 0, "Oreos": 25},
+    {"Uur": 11, "Klant": "Jumbo", "Due": 6, "Stroopwafels": 0, "Prince": 3, "Oreos": 19},
+    {"Uur": 11, "Klant": "AH", "Due": 6, "Stroopwafels": 0, "Prince": 4, "Oreos": 19},
+    {"Uur": 13, "Klant": "Hema", "Due": 7, "Stroopwafels": 4, "Prince": 0, "Oreos": 25},
+    {"Uur": 13, "Klant": "AH", "Due": 7, "Stroopwafels": 0, "Prince": 5, "Oreos": 19},
+    {"Uur": 14, "Klant": "Jumbo", "Due": 8, "Stroopwafels": 0, "Prince": 8, "Oreos": 16},
+    {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 4, "Prince": 0, "Oreos": 20}
+]
+    
+def schiet_nieuwe_orders_in():
+    for order in orders:
+        if order['uur'] == st.session_state.last_hour:
+            add_order(order['Klant'], order['Due'], order['Stroopwafels'], order['Prince'], order['Oreos'])
 
-def dag1():
-  add_order("Hema", due_date, 2, 3, 2)
-  
-def dag2():
-  add_order("Jumbo", due_date, 0, 4, 3)
-  
-def dag3():
-  add_order("AH", due_date, 0, 5, 2)
-  
-def dag4():
-  add_order("Hema", due_date, 3, 0, 6)
+# def start_game():
+#   add_order("Jumbo", due_date, 0, 8, 4)
+#   add_order("AH", due_date, 0, 4, 2)
+#   add_order("Jumbo", due_date, 0, 5, 3)
+#   add_order("Hema", due_date, 2, 0, 4)
 
-def bestel(klant, stroopwafel, oreo, prince):
-  add_order(klant, spoed_due_date, stroopwafel, prince, oreo)
+# def dag1():
+#   add_order("Hema", due_date, 2, 3, 2)
+  
+# def dag2():
+#   add_order("Jumbo", due_date, 0, 4, 3)
+  
+# def dag3():
+#   add_order("AH", due_date, 0, 5, 2)
+  
+# def dag4():
+#   add_order("Hema", due_date, 3, 0, 6)
+
+# def bestel(klant, stroopwafel, oreo, prince):
+#   add_order(klant, spoed_due_date, stroopwafel, prince, oreo)
 
 #########################LAY-OUT##################################
 
@@ -83,20 +106,6 @@ with col1:
 with col2:
     st.button('Reset Timer', on_click=reset_timer)
 
-# st.write("### Standaardbestellingen")
-
-# st.button('Startbestelling', on_click=start_game)
-
-# col3, col4 = st.columns(2)
-
-# with col3:
-#     st.button('Bestelling dag 2', on_click=dag1)
-#     st.button('Bestelling dag 4', on_click=dag3)
-
-# with col4:
-#     st.button('Bestelling dag 3', on_click=dag2)
-#     st.button('Bestelling dag 5', on_click=dag4)
-
 st.write("### Spoed bestellingen")
 
 col5, col6 = st.columns(2)
@@ -109,7 +118,3 @@ with col5:
 with col6:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
     st.button('Bestel', on_click=lambda: bestel(klant, stroopwafels, oreos, prince_koeken))
-
-st.write(f"⏱️ Uren verstreken: {st.session_state.delivery_slot}")
-st.write(f"Laatste uur: {st.session_state.last_hour}")
-
