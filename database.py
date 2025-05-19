@@ -29,11 +29,11 @@ def clear_orders():
 
 ##############################  GEREEDMELDEN KLANT ORDERS  ##############################
 
-def add_ready_order(customer, del_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios):
+def add_ready_order(order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios):
     with get_connection() as conn:
         conn.execute(
-            'INSERT INTO orders (customer,del_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-            (customer, del_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios)
+            'INSERT INTO orders (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios)
         )
         conn.commit()
 
