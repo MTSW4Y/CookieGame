@@ -19,7 +19,7 @@ def fetch_all_data():
     return data
 
 # Streamlit interface
-st.title("📦 Database-inhoud bekijken en downloaden")
+st.title("📦 Database bekijken en downloaden")
 
 # Ophalen van data
 data = fetch_all_data()
