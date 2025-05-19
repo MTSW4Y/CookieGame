@@ -61,12 +61,12 @@ def add_supply(group_no, type, outside, inside):
 
 def get_supplies():
     with get_connection() as conn:
-        result = pd.read_sql('SELECT * FROM ready_orders ORDER BY id DESC', conn)
+        result = pd.read_sql('SELECT * FROM supplies ORDER BY id DESC', conn)
         return result.reset_index(drop=True)
 
 def clear_supplies():
     with get_connection() as conn:
-        conn.execute('DELETE FROM ready_orders')
+        conn.execute('DELETE FROM supplies')
         conn.commit()
 
 ##############################  SIMULATIETIJD  ##############################
