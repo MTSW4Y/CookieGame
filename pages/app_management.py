@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
-from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order
+from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders
 
 #########################ORDERS##################################
 
@@ -44,11 +44,11 @@ def start_timer():
     else:
         st.session_state.start_time = time.time()
         schiet_eerste_order_in()
-        # start_game()
 
 def reset_timer():
     del st.session_state.timer_running
     clear_orders()
+    clear_ready_orders()
 
 if 'timer_running' not in st.session_state:
     st.session_state.start_time = None
