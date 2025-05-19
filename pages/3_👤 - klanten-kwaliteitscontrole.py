@@ -6,7 +6,7 @@ def registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aa
 
 st.title('👤 - Klanten')
 
-st.write("### Gereedmelden order")
+st.write("### Kwaliteitscontrole")
 
 col1, col2, col3 = st.columns(3)
 
