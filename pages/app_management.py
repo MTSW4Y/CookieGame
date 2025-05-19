@@ -93,7 +93,7 @@ with col1:
 with col2:
     st.button('Reset Game', on_click=reset_game)
 
-st.write("### Spoed bestellingen")
+st.write("### Spoed bestelling")
 
 col5, col6 = st.columns(2)
     
