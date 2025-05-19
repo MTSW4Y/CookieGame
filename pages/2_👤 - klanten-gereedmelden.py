@@ -1,5 +1,5 @@
 import streamlit as st
-from database import add_ready_order
+from database import add_ready_order, get_ready_orders
 
 st.title('👤 - Klanten')
 
@@ -27,6 +27,7 @@ with col3:
 if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, "", "", "", "", "", "", "")):
     st.toast("Order gereedgemeld", icon="✅")
 
-
-
 # add_ready_order(order_no, group_no, del_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios)
+
+orders_df = get_ready_orders()
+st.dataframe(orders_df)
