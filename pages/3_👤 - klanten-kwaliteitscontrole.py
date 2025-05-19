@@ -1,9 +1,6 @@
 import streamlit as st
 from database import add_ready_order, get_ready_orders
 
-def registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken):
-    pass
-
 st.title('👤 - Klanten')
 
 st.write("### Kwaliteitscontrole")
