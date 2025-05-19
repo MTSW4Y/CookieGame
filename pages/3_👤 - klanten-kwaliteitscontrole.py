@@ -1,4 +1,5 @@
 import streamlit as st
+from database import add_ready_order
 
 def registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken):
     pass
@@ -26,5 +27,8 @@ with col3:
     kwal_oreos = st.number_input("Goede oreos", step=1, value=gel_aant_oreos)
     kwal_prince_koeken = st.number_input("Goede prince koeken", step=1, value=gel_aant_prince_koeken)
 
-if st.button('Registeer', on_click=lambda: registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken) ):
+if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken)):
     st.toast("Kwaliteit geregistreert", icon="✅")
+
+orders_df = get_ready_orders()
+st.dataframe(orders_df)
