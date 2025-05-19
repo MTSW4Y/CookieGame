@@ -1,5 +1,5 @@
 import streamlit as st
-from database import add_ready_order, get_ready_orders, get_simulation_time
+from database import add_ready_order, get_ready_orders
 
 st.title('👤 - Klanten')
 
