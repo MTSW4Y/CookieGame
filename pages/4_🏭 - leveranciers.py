@@ -23,7 +23,7 @@ with col2:
     st.write("### Vulling")
     gel_aant_stroopwafels_vul = st.number_input("Aantal stroopwafelvulling", step=1)
     gel_aant_prince_koeken_vul = st.number_input("Aantal princevulling", step=1)
-    gel_aant_oreos_vul = st.number_input("Aantal oreovulling", step=1, value=gel_aant_oreos)
+    gel_aant_oreos_vul = st.number_input("Aantal oreovulling", step=1)
 
 with col3:
     st.write("### Buitenkant")
