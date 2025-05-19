@@ -23,8 +23,9 @@ with col3:
 # if st.button('Registeer'):
 #     st.toast("✔️ Opgeslagen!", icon="✅")
 
+log_time = get_simulation_time()
 
-if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, get_simulation_time(), "", "", "", "", "", "")):
+if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, log_time, "", "", "", "", "", "")):
     st.toast("Order gereedgemeld", icon="✅")
 
 # add_ready_order(order_no, group_no, del_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios)
