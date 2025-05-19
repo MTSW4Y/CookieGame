@@ -22,4 +22,4 @@ if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, "
     st.toast("Order gereedgemeld", icon="✅")
 
 orders_df = get_ready_orders()
-st.dataframe(orders_df.iloc[:, :4])
+st.dataframe(orders_df.iloc[:, :4], hide_index=True)
