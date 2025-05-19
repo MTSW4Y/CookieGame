@@ -18,8 +18,6 @@ with col2:
 with col3:
     pass
 
-log_time = get_simulation_time()
-
 if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, "", "", "", "", "", "")):
     st.toast("Order gereedgemeld", icon="✅")
 
