@@ -9,7 +9,7 @@ def get_connection():
 
 ##############################  AANKAMkEN KLANT ORDERS  ##############################
 
-def add_ready_order(customer, due_date, stroopwafels, prince_koeken, orios):
+def add_order(customer, due_date, stroopwafels, prince_koeken, orios):
     with get_connection() as conn:
         conn.execute(
             'INSERT INTO orders (customer,due_date, stroopwafels, prince_koeken, orios) VALUES (?, ?, ?, ?, ?)',
