@@ -32,7 +32,7 @@ def init_db():
             group_no INTEGER,
             log_date TEXT,
             cookie TEXT,
-            type TEXT,
+            supply_type TEXT,
             number INTEGER
         )''')
 
