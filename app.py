@@ -33,7 +33,7 @@ def init_db():
             log_date TEXT,
             type TEXT,
             outside INTEGER,
-            inside INTEGER,
+            inside INTEGER
         )''')
 
         conn.execute('''CREATE TABLE IF NOT EXISTS time (
