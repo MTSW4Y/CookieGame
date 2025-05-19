@@ -34,4 +34,4 @@ with col3:
 if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_oreos_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_oreos_buit)):
     st.toast("Inkoop geregistreert", icon="✅")
 
-st.dataframe(get_supplies())
+st.dataframe(get_supplies(), hide_index=True)
