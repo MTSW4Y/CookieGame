@@ -1,5 +1,5 @@
 import streamlit as st
-from database import add_ready_order, get_ready_orders
+from database import add_ready_order, get_ready_orders, get_simulation_time()
 
 st.title('👤 - Klanten')
 
@@ -24,7 +24,7 @@ with col3:
 #     st.toast("✔️ Opgeslagen!", icon="✅")
 
 
-if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, "", "", "", "", "", "", "")):
+if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, get_simulation_time(), "", "", "", "", "", "")):
     st.toast("Order gereedgemeld", icon="✅")
 
 # add_ready_order(order_no, group_no, del_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios)
