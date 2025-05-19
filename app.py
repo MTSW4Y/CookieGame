@@ -27,6 +27,15 @@ def init_db():
             q_del_orios INTEGER
         )''')
 
+        conn.execute('''CREATE TABLE IF NOT EXISTS supplies (
+            id INTEGER PRIMARY KEY,
+            group_no INTEGER,
+            log_date TEXT,
+            type TEXT,
+            buitenkant INTEGER,
+            vulling INTEGER,
+        )''')
+
         conn.execute('''CREATE TABLE IF NOT EXISTS time (
             id INTEGER PRIMARY KEY,
             simulation_time TEXT,
