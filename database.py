@@ -54,7 +54,7 @@ def add_supply(group_no, cookie, type, number):
     log_date = get_simulation_time()
     with get_connection() as conn:
         conn.execute(
-            'INSERT INTO supplies (ggroup_no, cookie, type, number) VALUES (?, ?, ?, ?, ?)',
+            'INSERT INTO supplies (group_no, cookie, type, number) VALUES (?, ?, ?, ?, ?)',
             (group_no, cookie, type, number)
         )
         conn.commit()
