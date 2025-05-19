@@ -24,10 +24,6 @@ st.title("📦 Database-inhoud bekijken en downloaden")
 # Ophalen van data
 data = fetch_all_data()
 
-# Tonen van JSON op de pagina
-st.subheader("📄 JSON-weergave van database")
-st.json(data)
-
 # Downloadknop voor JSON-bestand
 json_data = json.dumps(data, indent=4)
 buffer = BytesIO(json_data.encode('utf-8'))
@@ -38,3 +34,7 @@ st.download_button(
     file_name="database_dump.json",
     mime="application/json"
 )
+
+# Tonen van JSON op de pagina
+st.subheader("📄 JSON-weergave van database")
+st.json(data)
