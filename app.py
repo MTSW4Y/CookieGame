@@ -31,9 +31,9 @@ def init_db():
             id INTEGER PRIMARY KEY,
             group_no INTEGER,
             log_date TEXT,
+            cookie TEXT,
             type TEXT,
-            outside INTEGER,
-            inside INTEGER
+            number INTEGER
         )''')
 
         conn.execute('''CREATE TABLE IF NOT EXISTS time (
