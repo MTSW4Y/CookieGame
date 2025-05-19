@@ -50,12 +50,12 @@ def clear_ready_orders():
 
 ##############################  SUPPLIES  ##############################
 
-def add_supply(group_no, cookie, type, number):
+def add_supply(group_no, cookie, supply_type, number):
     log_date = get_simulation_time()
     with get_connection() as conn:
         conn.execute(
-            'INSERT INTO supplies (group_no, cookie, type, number) VALUES (?, ?, ?, ?, ?)',
-            (group_no, log_date, cookie, type, number)
+            'INSERT INTO supplies (group_no, log_date, cookie, supply_type, number) VALUES (?, ?, ?, ?, ?)',
+            (group_no, log_date, cookie, supply_type, number)
         )
         conn.commit()
 
