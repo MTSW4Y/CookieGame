@@ -43,7 +43,7 @@ def start_timer():
         pass
     else:
         st.session_state.start_time = time.time()
-        upsert_time(simulation_time(), row_id=2)
+        upsert_time(get_simulation_time(), row_id=2)
         schiet_eerste_order_in()
 
 def reset_game():
