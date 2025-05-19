@@ -16,15 +16,15 @@ def init_db():
 
         conn.execute('''CREATE TABLE IF NOT EXISTS ready_orders (
             id INTEGER PRIMARY KEY,
-            groep INTEGER,
-            order_id INTEGER,
-            ready_date TEXT,
-            gel_stroopwafels INTEGER,
-            gel_prince_koeken INTEGER,
-            gel_orios INTEGER,
-            goede_stroopwafels INTEGER,
-            goede_prince_koeken INTEGER,
-            goede_orios INTEGER
+            group_no INTEGER,
+            order_no INTEGER,
+            log_date TEXT,
+            del_stroopwafels INTEGER,
+            del_prince_koeken INTEGER,
+            del_orios INTEGER,
+            q_del_stroopwafels INTEGER,
+            q_del_prince_koeken INTEGER,
+            q_del_orios INTEGER
         )''')
 
         conn.execute('''CREATE TABLE IF NOT EXISTS time (
