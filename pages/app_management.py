@@ -49,6 +49,7 @@ def reset_game():
     del st.session_state.timer_running
     clear_orders()
     clear_ready_orders()
+    clear_supplies()
 
 if 'timer_running' not in st.session_state:
     st.session_state.start_time = None
