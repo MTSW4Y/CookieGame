@@ -32,8 +32,8 @@ def init_db():
             group_no INTEGER,
             log_date TEXT,
             type TEXT,
-            buitenkant INTEGER,
-            vulling INTEGER,
+            outside INTEGER,
+            inside INTEGER,
         )''')
 
         conn.execute('''CREATE TABLE IF NOT EXISTS time (
