@@ -9,8 +9,6 @@ def registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel
     add_supply(groep, 'princekoeken', 'koekje', gel_aant_prince_koeken_buit)
     add_supply(groep, 'oreos', 'koekje', gel_aant_oreos_buit)
 
-group_no, cookie, type, number
-
 st.title('🏭 - Leveranciers')
 
 st.write("### Uitgifte materialen")
