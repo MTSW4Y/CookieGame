@@ -45,7 +45,7 @@ def start_timer():
         st.session_state.start_time = time.time()
         schiet_eerste_order_in()
 
-def reset_timer():
+def reset_game():
     del st.session_state.timer_running
     clear_orders()
     clear_ready_orders()
@@ -91,7 +91,7 @@ with col1:
     st.button('Start Timer', on_click=start_timer)
 
 with col2:
-    st.button('Reset Timer', on_click=reset_timer)
+    st.button('Reset Game', on_click=reset_game)
 
 st.write("### Spoed bestellingen")
 
