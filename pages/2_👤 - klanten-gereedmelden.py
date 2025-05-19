@@ -1,7 +1,5 @@
 import streamlit as st
-
-def registreer(groep, ordernummer):
-    pass
+from database import add_ready_order
 
 st.title('👤 - Klanten')
 
@@ -26,5 +24,9 @@ with col3:
 #     st.toast("✔️ Opgeslagen!", icon="✅")
 
 
-if st.button('Registeer', on_click=lambda: registreer(groep, ordernummer)):
+if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, "", "", "", "", "", "", "")):
     st.toast("Order gereedgemeld", icon="✅")
+
+
+
+# add_ready_order(order_no, group_no, del_date, del_stroopwafels, del_prince_koeken, del_orios, q_del_stroopwafels, q_del_prince_koeken, q_del_orios)
