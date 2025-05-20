@@ -1,9 +1,6 @@
 import streamlit as st
 from database import add_ready_order, get_ready_orders
 
-def registreer(groep, ordernummer, gel_aant_stroopwafels, gel_aant_oreos, gel_aant_prince_koeken, kwal_stroopwafels, kwal_oreos, kwal_prince_koeken):
-    pass
-
 st.title('👤 - Klanten')
 
 st.write("### Kwaliteitscontrole")
@@ -30,4 +27,4 @@ with col3:
 if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, gel_aant_stroopwafels, gel_aant_prince_koeken, gel_aant_oreos, kwal_stroopwafels, kwal_prince_koeken, kwal_oreos)):
     st.toast("Kwaliteit geregistreert", icon="✅")
 
-st.dataframe(get_ready_orders())
+st.dataframe(get_ready_orders(), hide_index=True)

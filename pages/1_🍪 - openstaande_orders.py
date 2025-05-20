@@ -9,4 +9,4 @@ st_autorefresh(interval=1000, key="order_refresh")
 st.write(f"## {get_simulation_time()}")
 
 orders_df = get_orders()
-st.dataframe(orders_df)
+st.dataframe(orders_df, hide_index=True)

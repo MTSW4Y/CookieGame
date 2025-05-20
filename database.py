@@ -7,7 +7,7 @@ DB_PATH = 'central_database.db'
 def get_connection():
     return sqlite3.connect(DB_PATH)
 
-##############################  AANKAMkEN KLANT ORDERS  ##############################
+##############################  AANMAKEN KLANT ORDERS  ##############################
 
 def add_order(customer, due_date, stroopwafels, prince_koeken, orios):
     with get_connection() as conn:
@@ -46,6 +46,27 @@ def get_ready_orders():
 def clear_ready_orders():
     with get_connection() as conn:
         conn.execute('DELETE FROM ready_orders')
+        conn.commit()
+
+##############################  SUPPLIES  ##############################
+
+def add_supply(group_no, cookie, supply_type, number):
+    log_date = get_simulation_time()
+    with get_connection() as conn:
+        conn.execute(
+            'INSERT INTO supplies (group_no, log_date, cookie, supply_type, number) VALUES (?, ?, ?, ?, ?)',
+            (group_no, log_date, cookie, supply_type, number)
+        )
+        conn.commit()
+
+def get_supplies():
+    with get_connection() as conn:
+        result = pd.read_sql('SELECT * FROM supplies ORDER BY id DESC', conn)
+        return result.reset_index(drop=True)
+
+def clear_supplies():
+    with get_connection() as conn:
+        conn.execute('DELETE FROM supplies')
         conn.commit()
 
 ##############################  SIMULATIETIJD  ##############################
