@@ -37,3 +37,16 @@ if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafe
     st.toast("Inkoop geregistreert", icon="✅")
 
 st.dataframe(get_supplies(), hide_index=True)
+
+# Regel selecteren (op basis van ID bijv.)
+selected_id = st.selectbox("Selecteer ID om te verwijderen:", df['id'])
+
+# Verwijderknop
+if st.button("Verwijder regel"):
+    cursor.execute("DELETE FROM mijn_tabel WHERE id = ?", (selected_id,))
+    conn.commit()
+    st.success(f"Regel met ID {selected_id} verwijderd.")
+    
+    # Data verversen
+    df = pd.read_sql_query("SELECT * FROM mijn_tabel", conn)
+    st.dataframe(df)
