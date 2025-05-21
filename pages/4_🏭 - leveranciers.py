@@ -23,7 +23,7 @@ with col1:
     
 with col2:
     st.write("### Vulling")
-    gel_aant_stroopwafels_vul = st.number_input("Aantal 1004 {srtoop)", step=1)
+    gel_aant_stroopwafels_vul = st.number_input("Aantal 1004 {stroop)", step=1)
     gel_aant_prince_koeken_vul = st.number_input("Aantal 1005 (princecrème)", step=1)
     gel_aant_pennywafels_vul = st.number_input("Aantal 1006 (pennycholcolade)vulling", step=1)
 
