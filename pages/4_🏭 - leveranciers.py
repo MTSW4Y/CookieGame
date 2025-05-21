@@ -8,6 +8,7 @@ def registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel
     add_supply(groep, 'stroopwafel', 'koekje', gel_aant_stroopwafels_buit)
     add_supply(groep, 'princekoeken', 'koekje', gel_aant_prince_koeken_buit)
     add_supply(groep, 'pennywafels', 'koekje', gel_aant_pennywafels_buit)
+    add_supply(groep, 'bakjes', 'rest', gel_aant_bakjes)
 
 st.title('🏭 - Leveranciers')
 
@@ -18,6 +19,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.write("### Groep")
     groep = st.number_input("Groepsnummer", step=1)
+    gel_aant_bakjes = st.number_input("Aantal bakjes", step=1)
     
 with col2:
     st.write("### Vulling")
