@@ -25,6 +25,6 @@ with col3:
     kwal_penny_wafels = st.number_input("Goede penny wafels", step=1, value=gel_aant_penny_wafels)
 
 if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, gel_aant_stroopwafels, gel_aant_prince_koeken, gel_aant_penny_wafels, kwal_stroopwafels, kwal_prince_koeken, kwal_penny_wafels)):
-    st.toast("Kwaliteit geregistreert", icon="✅")
+    st.toast("Kwaliteit geregistreerd", icon="✅")
 
 st.dataframe(get_ready_orders(), hide_index=True)
