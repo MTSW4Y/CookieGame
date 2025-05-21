@@ -23,15 +23,15 @@ with col1:
     
 with col2:
     st.write("### Vulling")
-    gel_aant_stroopwafels_vul = st.number_input("Aantal stroopwafelvulling", step=1)
-    gel_aant_prince_koeken_vul = st.number_input("Aantal princevulling", step=1)
-    gel_aant_pennywafels_vul = st.number_input("Aantal pennywafelvulling", step=1)
+    gel_aant_stroopwafels_vul = st.number_input("Aantal 1004 {srtoop)", step=1)
+    gel_aant_prince_koeken_vul = st.number_input("Aantal 1005 (princecrème)", step=1)
+    gel_aant_pennywafels_vul = st.number_input("Aantal 1006 (pennycholcolade)vulling", step=1)
 
 with col3:
     st.write("### Buitenkant")
-    gel_aant_stroopwafels_buit = st.number_input("Aantal stroopwafel-buitenkanten", step=1, value=gel_aant_stroopwafels_vul*2)
-    gel_aant_prince_koeken_buit = st.number_input("Aantal prince koek-buitenkanten", step=1, value=gel_aant_prince_koeken_vul*2)
-    gel_aant_pennywafels_buit = st.number_input("Aantal pennywafel-buitenkanten", step=1, value=gel_aant_pennywafels_vul*2)
+    gel_aant_stroopwafels_buit = st.number_input("Aantal 1001 (stroopwafel deeg)", step=1, value=gel_aant_stroopwafels_vul*2)
+    gel_aant_prince_koeken_buit = st.number_input("Aantal 1002 (princekoek deeg)", step=1, value=gel_aant_prince_koeken_vul*2)
+    gel_aant_pennywafels_buit = st.number_input("Aantal 1003 (pennywafeldeeg)", step=1, value=gel_aant_pennywafels_vul*2)
 
 if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit)):
     st.toast("Inkoop geregistreert", icon="✅")
