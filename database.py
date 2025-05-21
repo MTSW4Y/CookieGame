@@ -9,11 +9,11 @@ def get_connection():
 
 ##############################  AANMAKEN KLANT ORDERS  ##############################
 
-def add_order(customer, due_date, stroopwafels, prince_koeken, pennywafels):
+def add_order(customer, due_date, stroopwafels, prince_koeken, penny_wafels):
     with get_connection() as conn:
         conn.execute(
-            'INSERT INTO orders (customer,due_date, stroopwafels, prince_koeken, pennywafels) VALUES (?, ?, ?, ?, ?)',
-            (customer, due_date, stroopwafels, prince_koeken, pennywafels)
+            'INSERT INTO orders (customer,due_date, stroopwafels, prince_koeken, penny_wafels) VALUES (?, ?, ?, ?, ?)',
+            (customer, due_date, stroopwafels, prince_koeken, penny_wafels)
         )
         conn.commit()
 
@@ -29,12 +29,12 @@ def clear_orders():
 
 ##############################  GEREEDMELDEN KLANT ORDERS  ##############################
 
-def add_ready_order(order_no, group_no, del_stroopwafels, del_prince_koeken, del_pennywafels, q_del_stroopwafels, q_del_prince_koeken, q_del_pennywafels):
+def add_ready_order(order_no, group_no, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels):
     log_date = get_simulation_time()
     with get_connection() as conn:
         conn.execute(
-            'INSERT INTO ready_orders (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_pennywafels, q_del_stroopwafels, q_del_prince_koeken, q_del_pennywafels) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_pennywafels, q_del_stroopwafels, q_del_prince_koeken, q_del_pennywafels)
+            'INSERT INTO ready_orders (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels)
         )
         conn.commit()
 
