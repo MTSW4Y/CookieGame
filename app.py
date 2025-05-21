@@ -11,7 +11,7 @@ def init_db():
             due_date TEXT,
             stroopwafels INTEGER,
             prince_koeken INTEGER,
-            orios INTEGER
+            penny_wafels INTEGER
         )''')
 
         conn.execute('''CREATE TABLE IF NOT EXISTS ready_orders (
@@ -21,10 +21,10 @@ def init_db():
             log_date TEXT,
             del_stroopwafels INTEGER,
             del_prince_koeken INTEGER,
-            del_orios INTEGER,
+            del_penny_wafels INTEGER,
             q_del_stroopwafels INTEGER,
             q_del_prince_koeken INTEGER,
-            q_del_orios INTEGER
+            q_del_penny_wafels INTEGER
         )''')
 
         conn.execute('''CREATE TABLE IF NOT EXISTS supplies (
