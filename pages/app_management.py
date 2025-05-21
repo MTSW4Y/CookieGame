@@ -102,7 +102,7 @@ col5, col6 = st.columns(2)
     
 with col5:
     stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
-    Penny_wafels = st.number_input("Vul het aantal Penny_wafels in voor deze bestelling", min_value=0, max_value=10, step=1)
+    Penny_wafels = st.number_input("Vul het aantal penny wafels in voor deze bestelling", min_value=0, max_value=10, step=1)
     prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
     
 with col6:
