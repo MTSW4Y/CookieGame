@@ -34,7 +34,7 @@ with col3:
     gel_aant_pennywafels_buit = st.number_input("Aantal 1003 (pennywafeldeeg)", step=1, value=gel_aant_pennywafels_vul*2)
 
 if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit)):
-    st.toast("Inkoop geregistreert", icon="✅")
+    st.toast("Inkoop geregistreerd", icon="✅")
 
 st.dataframe(get_supplies(), hide_index=True)
 
