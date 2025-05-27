@@ -55,7 +55,7 @@ def start_timer():
         upsert_time(get_simulation_time(), row_id=2)
         schiet_eerste_order_in()
         for groep in [1,2,3,4,5,6]:
-            registreer(groep, 1, 1, 1, 1, 1, 1):
+            registreer(groep, 1, 1, 1, 1, 1, 1)
 
 def reset_game():
     del st.session_state.timer_running
