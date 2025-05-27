@@ -32,11 +32,6 @@ def delete_ready_order_by_id(order_id):
         conn.execute('DELETE FROM ready_orders WHERE id = ?', (order_id,))
         conn.commit()
 
-def delete_supply_by_id(order_id):
-    with get_connection() as conn:
-        conn.execute('DELETE FROM supplies WHERE id = ?', (order_id,))
-        conn.commit()
-
 ##############################  GEREEDMELDEN KLANT ORDERS  ##############################
 
 def add_ready_order(order_no, group_no, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels):
@@ -79,6 +74,11 @@ def clear_supplies():
         conn.execute('DELETE FROM supplies')
         conn.commit()
 
+def delete_supply_by_id(order_id):
+    with get_connection() as conn:
+        conn.execute('DELETE FROM supplies WHERE id = ?', (order_id,))
+        conn.commit()
+        
 ##############################  SIMULATIETIJD  ##############################
 
 def get_simulation_time():
