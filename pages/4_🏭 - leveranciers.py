@@ -46,4 +46,4 @@ selected_id = st.number_input("Vul ID in om te verwijderen:")
 if st.button("Verwijder regel"):
     delete_supply_by_id(selected_id)
     st.toast("Regel verwijderd", icon="✅")
-    refresh()
+    html('<script>parent.window.location.reload();</script>')
