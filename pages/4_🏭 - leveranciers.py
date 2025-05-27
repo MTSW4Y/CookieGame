@@ -37,7 +37,7 @@ if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafe
     st.toast("Inkoop geregistreerd", icon="✅")
 
 supplies = get_supplies()
-st.dataframe(_supplies, hide_index=True)
+st.dataframe( supplies, hide_index=True)
 
 # Regel selecteren (op basis van ID bijv.)
 selected_id = st.selectbox("Selecteer ID om te verwijderen:", supplies['id'])
