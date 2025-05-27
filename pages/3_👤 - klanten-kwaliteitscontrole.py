@@ -24,6 +24,7 @@ with col3:
     kwal_prince_koeken = st.number_input("Goede prince koeken", step=1, value=gel_aant_prince_koeken)
     kwal_penny_wafels = st.number_input("Goede penny wafels", step=1, value=gel_aant_penny_wafels)
 
+cols = st.columns(6)
 for i, col in enumerate(cols):
     col.checkbox(f'Groep {i + 1}')
 
