@@ -48,4 +48,4 @@ with col5:
     if st.button("Verwijder regel"):
         delete_supply_by_id(selected_id)
         st.toast("Regel verwijderd", icon="✅")
-        html('<script>parent.window.location.reload();</script>')
+        st.experimental_rerun()
