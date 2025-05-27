@@ -1,5 +1,5 @@
 import streamlit as st
-from database import add_supply, get_supplies, delete_order_by_id
+from database import add_supply, get_supplies, delete_supply_by_id
 
 def registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit):
     add_supply(groep, 'stroopwafel', 'vulling', gel_aant_stroopwafels_vul)
@@ -42,12 +42,9 @@ st.dataframe( supplies, hide_index=True)
 # Regel selecteren (op basis van ID bijv.)
 selected_id = st.selectbox("Selecteer ID om te verwijderen:", supplies['id'])
 
-st.button("remove regel", on_click=lambda: delete_order_by_id(selected_id))
-
-
 # Verwijderknop
 if st.button("Verwijder regel"):
-    delete_order_by_id(selected_id)
+    delete_supply_by_id(selected_id)
     st.toast("Regel verwijderd", icon="✅")
     # cursor.execute("DELETE FROM mijn_tabel WHERE id = ?", (selected_id,))
     # conn.commit()
