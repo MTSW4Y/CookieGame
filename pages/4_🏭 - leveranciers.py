@@ -48,6 +48,5 @@ with col5:
     if st.button("Verwijder regel"):
         delete_supply_by_id(selected_id)
         st.toast("Regel verwijderd", icon="✅")
-        st.experimental_rerun()
 
 st.dataframe( supplies, hide_index=True)
