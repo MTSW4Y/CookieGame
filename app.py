@@ -24,7 +24,8 @@ def init_db():
             del_penny_wafels INTEGER,
             q_del_stroopwafels INTEGER,
             q_del_prince_koeken INTEGER,
-            q_del_penny_wafels INTEGER
+            q_del_penny_wafels INTEGER, 
+            reject_reason TEXT
         )''')
 
         conn.execute('''CREATE TABLE IF NOT EXISTS supplies (
