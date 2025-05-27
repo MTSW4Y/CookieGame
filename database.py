@@ -27,9 +27,14 @@ def clear_orders():
         conn.execute('DELETE FROM orders')
         conn.commit()
 
-def delete_order_by_id(order_id):
+def delete_ready_order_by_id(order_id):
     with get_connection() as conn:
         conn.execute('DELETE FROM ready_orders WHERE id = ?', (order_id,))
+        conn.commit()
+
+def delete_supply_by_id(order_id):
+    with get_connection() as conn:
+        conn.execute('DELETE FROM supplies WHERE id = ?', (order_id,))
         conn.commit()
 
 ##############################  GEREEDMELDEN KLANT ORDERS  ##############################
