@@ -39,11 +39,13 @@ if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafe
 supplies = get_supplies()
 st.dataframe( supplies, hide_index=True)
 
-col14 col5 = st.columns(2)
+col4, col5 = st.columns(2)
 
-selected_id = st.number_input("Vul ID in om te verwijderen:")
+with col4:
+    selected_id = st.number_input("Vul ID in om te verwijderen:")
 
-if st.button("Verwijder regel"):
-    delete_supply_by_id(selected_id)
-    st.toast("Regel verwijderd", icon="✅")
-    html('<script>parent.window.location.reload();</script>')
+with col5:
+    if st.button("Verwijder regel"):
+        delete_supply_by_id(selected_id)
+        st.toast("Regel verwijderd", icon="✅")
+        html('<script>parent.window.location.reload();</script>')
