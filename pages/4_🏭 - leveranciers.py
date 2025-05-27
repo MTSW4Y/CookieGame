@@ -42,10 +42,10 @@ st.dataframe( supplies, hide_index=True)
 col4, col5 = st.columns(2)
 
 with col4:
-    selected_id = st.number_input("Vul ID in om te verwijderen:")
+    selected_id = st.number_input("Vul ID in om te verwijderen:", step=1)
 
 with col5:
     if st.button("Verwijder regel"):
         delete_supply_by_id(selected_id)
-        st.toast("Regel verwijderd", icon="✅", step=1)
+        st.toast("Regel verwijderd", icon="✅")
         st.experimental_rerun()
