@@ -42,6 +42,9 @@ st.dataframe( supplies, hide_index=True)
 # Regel selecteren (op basis van ID bijv.)
 selected_id = st.selectbox("Selecteer ID om te verwijderen:", supplies['id'])
 
+st.button("remove regel", on_click=lambda: delete_order_by_id(selected_id))
+
+
 # Verwijderknop
 if st.button("Verwijder regel"):
     delete_order_by_id(selected_id)
