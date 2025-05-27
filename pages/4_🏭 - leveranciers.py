@@ -36,17 +36,18 @@ with col3:
 if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit)):
     st.toast("Inkoop geregistreerd", icon="✅")
 
-st.dataframe(get_supplies(), hide_index=True)
+supplies = get_supplies()
+st.dataframe(_supplies, hide_index=True)
 
 # Regel selecteren (op basis van ID bijv.)
-selected_id = st.selectbox("Selecteer ID om te verwijderen:", df['id'])
+selected_id = st.selectbox("Selecteer ID om te verwijderen:", supplies['id'])
 
-# Verwijderknop
-if st.button("Verwijder regel"):
-    cursor.execute("DELETE FROM mijn_tabel WHERE id = ?", (selected_id,))
-    conn.commit()
-    st.success(f"Regel met ID {selected_id} verwijderd.")
+# # Verwijderknop
+# if st.button("Verwijder regel"):
+#     cursor.execute("DELETE FROM mijn_tabel WHERE id = ?", (selected_id,))
+#     conn.commit()
+#     st.success(f"Regel met ID {selected_id} verwijderd.")
     
-    # Data verversen
-    df = pd.read_sql_query("SELECT * FROM mijn_tabel", conn)
-    st.dataframe(df)
+#     # Data verversen
+#     df = pd.read_sql_query("SELECT * FROM mijn_tabel", conn)
+#     st.dataframe(df)
