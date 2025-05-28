@@ -1,3 +1,5 @@
+start_supplies = []
+
 week_1 = [
     {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 6, "Prince": 3, "Penny_wafels": 13},
     {"Uur": 8, "Klant": "Jumbo", "Due": 2, "Stroopwafels": 0, "Prince": 8, "Penny_wafels": 19},
