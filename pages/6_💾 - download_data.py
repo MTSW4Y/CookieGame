@@ -32,7 +32,7 @@ with col4:
         st.toast(f"Supply met id {selected_id} verwijderd", icon="✅")
 
 with col5:
-    if st.button("Verwijder regel"):
+    if st.button("Verwijdert regel"):
         delete_supply_by_id(selected_id)
         st.toast("Regel verwijderd", icon="✅")
 
