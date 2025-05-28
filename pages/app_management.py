@@ -93,7 +93,7 @@ st.write(f"### {get_simulation_time()}")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.button('🕒 Start Timer', on_click=lambda: start_timer(orders))
+    st.button('🕒 Start Timer', on_click=lambda: start_timer(st.session_state.orders))
 
 with col2:
     st.button('🔴 Reset Game', on_click=reset_game)
