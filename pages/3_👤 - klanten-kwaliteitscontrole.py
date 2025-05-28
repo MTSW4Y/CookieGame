@@ -31,7 +31,7 @@ for i, col in enumerate(cols):
     groep_feedback[i+1] = col.checkbox(f'Groep {i + 1}')
 
 if gel_aant_stroopwafels != kwal_stroopwafels or gel_aant_prince_koeken != kwal_prince_koeken or gel_aant_penny_wafels != kwal_penny_wafels:
-    st.write("er zijn kwaliteitsissues")
+    st.write(f"## er zijn kwaliteitsissues bij groep {groep}")
 
 st.write(groep_feedback)
 
