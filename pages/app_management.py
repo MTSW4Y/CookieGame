@@ -88,8 +88,6 @@ if selection == "week 2":
 if selection == "week 3":
     st.session_state.orders = week_3
 
-st.write(st.session_state.orders)
-
 st.write(f"### {get_simulation_time()}")
 
 col1, col2 = st.columns(2)
