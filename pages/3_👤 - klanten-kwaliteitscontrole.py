@@ -30,13 +30,12 @@ groep_feedback = {}
 for i, col in enumerate(cols):
     groep_feedback[i+1] = col.checkbox(f'Groep {i + 1}')
 
+reject_reason = ""
 if gel_aant_stroopwafels != kwal_stroopwafels or gel_aant_prince_koeken != kwal_prince_koeken or gel_aant_penny_wafels != kwal_penny_wafels:
     st.write(f"### er zijn kwaliteitsissues bij groep {groep}")
     if groep_feedback[groep]:
         st.write(f"### en groep {groep} wil graag feedback")
         reject_reason = st.selectbox("Wat is de reden voor de afkeur:", ["Vulling zichtbaar", "Lagen los", "Afwijking in vorm", "Overig"])
-else:
-    reject_reason = ""
 
 if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, gel_aant_stroopwafels, gel_aant_prince_koeken, gel_aant_penny_wafels, kwal_stroopwafels, kwal_prince_koeken, kwal_penny_wafels, reject_reason)):
     st.toast("Kwaliteit geregistreerd", icon="✅")
