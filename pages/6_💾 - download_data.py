@@ -31,19 +31,19 @@ with col4:
     
 with col5:
     if selectie == "Order":
-        selected_o_id = st.number_input("Vul Order_ID in om te verwijderen:", step=1)
+        selected_o_id = st.number_input("Te verwijderen Order_ID:", step=1)
         if st.button("Verwijder order"):
             delete_order_by_id(selected_o_id)
             st.toast(f"Order met id {selected_o_id} verwijderd", icon="✅")
 
     if selectie == "Gereed/Kwaliteitmelding":
-        selected_ro_id = st.number_input("Vul Ready_Order_ID in om te verwijderen:", step=1)
+        selected_ro_id = st.number_input("Te verwijderen Ready_Order_ID:", step=1)
         if st.button("Verwijder ready order"):
             delete_ready_order_by_id(selected_ro_id)
             st.toast(f"Ready order met id {selected_ro_id} verwijderd", icon="✅")
 
     if selectie == "Leverantie":
-        selected_s_id = st.number_input("Vul Supply_ID in om te verwijderen:", step=1)
+        selected_s_id = st.number_input("Te verwijderen Supply_ID:", step=1)
         if st.button("Verwijder supply"):
             delete_supply_by_id(selected_s_id)
             st.toast(f"Supply met id {selected_s_id} verwijderd", icon="✅")
