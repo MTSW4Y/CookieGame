@@ -28,21 +28,21 @@ col4, col5, col6 = st.columns(3)
 
 with col4:
     st.write("Verwijderen orders")
-    selected_o_id = st.number_input("Vul ID in om te verwijderen:", step=1)
+    selected_o_id = st.number_input("Vul Order_ID in om te verwijderen:", step=1)
     if st.button("Verwijder order"):
         delete_order_by_id(selected_o_id)
         st.toast(f"Order met id {selected_o_id} verwijderd", icon="✅")
 
 with col5:
     st.write("Verwijderen inboeken order of kwaliteitsregistratie")
-    selected_ro_id = st.number_input("Vul ID in om te verwijderen:", step=1)
+    selected_ro_id = st.number_input("Vul Ready_Order_ID in om te verwijderen:", step=1)
     if st.button("Verwijder ready order"):
         delete_ready_order_by_id(selected_ro_id)
         st.toast(f"Ready order met id {selected_ro_id} verwijderd", icon="✅")
 
 with col6:
     st.write("Verwijderen supplies")
-    selected_s_id = st.number_input("Vul ID in om te verwijderen:", step=1)
+    selected_s_id = st.number_input("Vul Supply_ID in om te verwijderen:", step=1)
     if st.button("Verwijder supply"):
         delete_supply_by_id(selected_s_id)
         st.toast(f"Supply met id {selected_s_id} verwijderd", icon="✅")
