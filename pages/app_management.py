@@ -4,15 +4,6 @@ from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders, clear_supplies, upsert_time, add_supply, registrer_supplies
 
-# def registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit, gel_aant_bakjes):
-#     add_supply(groep, 'stroopwafel', 'vulling', gel_aant_stroopwafels_vul)
-#     add_supply(groep, 'princekoeken', 'vulling', gel_aant_prince_koeken_vul)
-#     add_supply(groep, 'pennywafels', 'vulling', gel_aant_pennywafels_vul)
-#     add_supply(groep, 'stroopwafel', 'koekje', gel_aant_stroopwafels_buit)
-#     add_supply(groep, 'princekoeken', 'koekje', gel_aant_prince_koeken_buit)
-#     add_supply(groep, 'pennywafels', 'koekje', gel_aant_pennywafels_buit)
-#     add_supply(groep, 'bakjes', 'rest', gel_aant_bakjes)
-
 #########################ORDERS##################################
 
 orders = [
