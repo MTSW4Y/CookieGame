@@ -22,10 +22,14 @@ def fetch_all_data():
 # Streamlit interface
 st.title("📦 Data bekijken, editen en downloaden")
 
-col4, col5 = st.columns(2)
+col4, col5, col6 = st.columns(3)
 
 with col4:
+    st.write("Verwijderen supplies")
     selected_id = st.number_input("Vul ID in om te verwijderen:", step=1)
+    if st.button("Verwijder regel"):
+        delete_supply_by_id(selected_id)
+        st.toast(f"Supply met id {selected_id} verwijderd", icon="✅")
 
 with col5:
     if st.button("Verwijder regel"):
