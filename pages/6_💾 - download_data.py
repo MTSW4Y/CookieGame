@@ -2,7 +2,7 @@ import streamlit as st
 import sqlite3
 import json
 from io import BytesIO
-from database import delete_supply_by_id
+from database import delete_supply_by_id, delete_ready_order_by_id, delete_order_by_id
 
 DB_PATH = 'central_database.db'
 
@@ -22,20 +22,30 @@ def fetch_all_data():
 # Streamlit interface
 st.title("📦 Data bekijken, editen en downloaden")
 
+st.write("### Verwijderen data")
+
 col4, col5, col6 = st.columns(3)
 
 with col4:
-    st.write("Verwijderen supplies")
+    st.write("Verwijderen orders")
     selected_id = st.number_input("Vul ID in om te verwijderen:", step=1)
-    if st.button("Verwijder regel"):
-        delete_supply_by_id(selected_id)
-        st.toast(f"Supply met id {selected_id} verwijderd", icon="✅")
+    if st.button("Verwijder order"):
+        delete_order_by_id(selected_id)
+        st.toast(f"Order met id {selected_id} verwijderd", icon="✅")
 
 with col5:
-    if st.button("Verwijdert regel"):
-        delete_supply_by_id(selected_id)
-        st.toast("Regel verwijderd", icon="✅")
+    st.write("Verwijderen inboeken order of kwaliteitsregistratie")
+    selected_id = st.number_input("Vul ID in om te verwijderen:", step=1)
+    if st.button("Verwijder ready order"):
+        delete_ready_order_by_id(selected_id)
+        st.toast(f"Ready order met id {selected_id} verwijderd", icon="✅")
 
+with col6:
+    st.write("Verwijderen supplies")
+    selected_id = st.number_input("Vul ID in om te verwijderen:", step=1)
+    if st.button("Verwijder supply"):
+        delete_supply_by_id(selected_id)
+        st.toast(f"Supply met id {selected_id} verwijderd", icon="✅")
 
 # Ophalen van data
 data = fetch_all_data()
