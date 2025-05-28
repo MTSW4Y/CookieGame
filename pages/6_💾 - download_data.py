@@ -30,7 +30,7 @@ with col4:
     selectie = st.selectbox("Wat wil je verwijderen", ["Order", "Gereed/Kwaliteitmelding", "Leverantie"])
     
 with col5:
-    if selectie == "order":
+    if selectie == "Order":
         selected_o_id = st.number_input("Vul Order_ID in om te verwijderen:", step=1)
         if st.button("Verwijder order"):
             delete_order_by_id(selected_o_id)
