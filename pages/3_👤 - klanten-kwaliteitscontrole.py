@@ -30,6 +30,9 @@ groep_feedback = {}
 for i, col in enumerate(cols):
     groep_feedback[i+1] = col.checkbox(f'Groep {i + 1}')
 
+if gel_aant_stroopwafels != kwal_stroopwafels or gel_aant_prince_koeken != kwal_prince_koeken or gel_aant_penny_wafels != kwal_penny_wafels:
+    st.write("er zijn kwaliteitsissues")
+
 st.write(groep_feedback)
 
 reject_reason = st.selectbox("Wat is de reden voor de afkeur:", ["Vulling zichtbaar", "Lagen los", "Afwijking in vorm", "Overig"])
