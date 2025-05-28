@@ -27,7 +27,7 @@ st.write("### Verwijderen data")
 col4, col5, col6 = st.columns(3)
 
 with col4:
-    selectie = st.selectbox("Wat wil je verwijderen", ["Order", "Gereed/Kwaliteitmelding", "Leverantie"])
+    selectie = st.selectbox("Wat wil je verwijderen", ["<selecteer>", "Order", "Gereed/Kwaliteitmelding", "Leverantie"])
     
 with col5:
     if selectie == "Order":
