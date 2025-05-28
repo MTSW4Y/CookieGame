@@ -2,6 +2,7 @@ import streamlit as st
 import sqlite3
 import json
 from io import BytesIO
+from database import delete_supply_by_id
 
 DB_PATH = 'central_database.db'
 
@@ -19,7 +20,18 @@ def fetch_all_data():
     return data
 
 # Streamlit interface
-st.title("📦 Data bekijken en downloaden")
+st.title("📦 Data bekijken, editen en downloaden")
+
+col4, col5 = st.columns(2)
+
+with col4:
+    selected_id = st.number_input("Vul ID in om te verwijderen:", step=1)
+
+with col5:
+    if st.button("Verwijder regel"):
+        delete_supply_by_id(selected_id)
+        st.toast("Regel verwijderd", icon="✅")
+
 
 # Ophalen van data
 data = fetch_all_data()
