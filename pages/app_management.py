@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
-from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders, clear_supplies, upsert_time, add_supply, registrer_supplies
+from database import clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders, clear_supplies, upsert_time, registrer_supplies
 from orders import week_1, week_2, week_3
 
 #########################ORDERS##################################
