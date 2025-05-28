@@ -27,28 +27,26 @@ st.write("### Verwijderen data")
 col4, col5, col6 = st.columns(3)
 
 with col4:
-    klant = st.selectbox("Wat wil je verwijderen", ["Order", "Gereed/Kwaliteitmelding", "Leverantie"])
+    selectie = st.selectbox("Wat wil je verwijderen", ["Order", "Gereed/Kwaliteitmelding", "Leverantie"])
     
 with col5:
-    st.write("Verwijderen orders")
-    selected_o_id = st.number_input("Vul Order_ID in om te verwijderen:", step=1)
-    if st.button("Verwijder order"):
-        delete_order_by_id(selected_o_id)
-        st.toast(f"Order met id {selected_o_id} verwijderd", icon="✅")
+    if selectie == "order":
+        selected_o_id = st.number_input("Vul Order_ID in om te verwijderen:", step=1)
+        if st.button("Verwijder order"):
+            delete_order_by_id(selected_o_id)
+            st.toast(f"Order met id {selected_o_id} verwijderd", icon="✅")
 
-    st.write("Verwijderen inboeken order of kwaliteitsregistratie")
-    selected_ro_id = st.number_input("Vul Ready_Order_ID in om te verwijderen:", step=1)
-    if st.button("Verwijder ready order"):
-        delete_ready_order_by_id(selected_ro_id)
-        st.toast(f"Ready order met id {selected_ro_id} verwijderd", icon="✅")
+    if selectie == "Gereed/Kwaliteitmelding":
+        selected_ro_id = st.number_input("Vul Ready_Order_ID in om te verwijderen:", step=1)
+        if st.button("Verwijder ready order"):
+            delete_ready_order_by_id(selected_ro_id)
+            st.toast(f"Ready order met id {selected_ro_id} verwijderd", icon="✅")
 
-    st.write("Verwijderen supplies")
-    selected_s_id = st.number_input("Vul Supply_ID in om te verwijderen:", step=1)
-    if st.button("Verwijder supply"):
-        delete_supply_by_id(selected_s_id)
-        st.toast(f"Supply met id {selected_s_id} verwijderd", icon="✅")
-
-# with col6:
+    if selectie == "Leverantie":
+        selected_s_id = st.number_input("Vul Supply_ID in om te verwijderen:", step=1)
+        if st.button("Verwijder supply"):
+            delete_supply_by_id(selected_s_id)
+            st.toast(f"Supply met id {selected_s_id} verwijderd", icon="✅")
 
 # Ophalen van data
 data = fetch_all_data()
