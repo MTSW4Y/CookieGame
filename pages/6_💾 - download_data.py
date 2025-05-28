@@ -20,7 +20,7 @@ def fetch_all_data():
     return data
 
 # Streamlit interface
-st.title("📦 Data bekijken, editen en downloaden")
+st.title("📦 Data bekijken, verwijderen en downloaden")
 
 st.write("### Verwijderen data")
 
