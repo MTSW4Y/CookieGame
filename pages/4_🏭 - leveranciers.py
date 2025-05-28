@@ -1,5 +1,5 @@
 import streamlit as st
-from database import add_supply, get_supplies, delete_supply_by_id
+from database import add_supply, get_supplies
 
 def registreer(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit):
     add_supply(groep, 'stroopwafel', 'vulling', gel_aant_stroopwafels_vul)
@@ -38,14 +38,3 @@ if st.button('Registeer', on_click=lambda: registreer(groep, gel_aant_stroopwafe
 
 supplies = get_supplies()
 st.dataframe( supplies, hide_index=True)
-
-# col4, col5 = st.columns(2)
-
-# with col4:
-#     selected_id = st.number_input("Vul ID in om te verwijderen:", step=1)
-
-# with col5:
-#     if st.button("Verwijder regel"):
-#         delete_supply_by_id(selected_id)
-#         st.toast("Regel verwijderd", icon="✅")
-#         st.experimental_rerun()
