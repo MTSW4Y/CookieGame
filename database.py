@@ -27,9 +27,9 @@ def clear_orders():
         conn.execute('DELETE FROM orders')
         conn.commit()
 
-def delete_ready_order_by_id(order_id):
+def delete_order_by_id(order_id):
     with get_connection() as conn:
-        conn.execute('DELETE FROM ready_orders WHERE id = ?', (order_id,))
+        conn.execute('DELETE FROM orders WHERE id = ?', (order_id,))
         conn.commit()
 
 def registrer_supplies(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit, gel_aant_bakjes):
@@ -60,6 +60,11 @@ def get_ready_orders():
 def clear_ready_orders():
     with get_connection() as conn:
         conn.execute('DELETE FROM ready_orders')
+        conn.commit()
+
+def delete_ready_order_by_id(order_id):
+    with get_connection() as conn:
+        conn.execute('DELETE FROM ready_orders WHERE id = ?', (order_id,))
         conn.commit()
 
 ##############################  SUPPLIES  ##############################
