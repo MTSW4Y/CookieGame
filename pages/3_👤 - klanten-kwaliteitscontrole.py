@@ -24,7 +24,7 @@ with col3:
     kwal_prince_koeken = st.number_input("Goede prince koeken", step=1, value=gel_aant_prince_koeken)
     kwal_penny_wafels = st.number_input("Goede penny wafels", step=1, value=gel_aant_penny_wafels)
 
-st.write("Geef hier aan welke groepen feedback hebben gevraagd.")
+st.write("Geef hier aan welke groepen feedback hebben gevraagd:")
 cols = st.columns(6)
 groep_feedback = {}
 for i, col in enumerate(cols):
