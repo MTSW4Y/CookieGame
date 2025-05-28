@@ -28,7 +28,7 @@ st.write("Geef hier aan welke groepen feedback hebben gevraagd.")
 cols = st.columns(6)
 groep_feedback = {}
 for i, col in enumerate(cols):
-    groep_feedback[i] = col.checkbox(f'Groep {i + 1}')
+    groep_feedback[i+1] = col.checkbox(f'Groep {i + 1}')
 
 st.write(groep_feedback)
 
