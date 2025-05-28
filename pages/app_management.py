@@ -7,7 +7,7 @@ from orders import week_1, week_2, week_3
 
 #########################ORDERS##################################
 
-orders = week_1
+orders = week_2
 
 # dit moet ik nog even opslimmen..........
 
