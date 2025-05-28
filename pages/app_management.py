@@ -63,7 +63,7 @@ if st.session_state.timer_running:
     if current_hour != st.session_state.last_hour:
         if current_hour != 12:
             st.session_state.delivery_slot += 1
-            schiet_nieuwe_orders_in()
+            schiet_nieuwe_orders_in(orders)
         st.session_state.last_hour = current_hour
 
 if st.session_state.last_hour == 12:
