@@ -55,6 +55,8 @@ data = fetch_all_data()
 json_data = json.dumps(data, indent=4)
 buffer = BytesIO(json_data.encode('utf-8'))
 
+st.write("### Downloaden data")
+
 st.download_button(
     label="⬇️ Download database als JSON",
     data=buffer,
