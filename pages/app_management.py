@@ -82,11 +82,13 @@ st_autorefresh(interval=1000, key="order_refresh")
 selection = st.selectbox("Welke week wordt er gespeeld?", ["week 1", "week 2", "week 3"])
 
 if selection == "week 1":
-    orders = week_1
+    st.session_state.orders = week_1
 if selection == "week 2":
-    orders = week_2
+    st.session_state.orders = week_2
 if selection == "week 3":
-    orders = week_3   
+    st.session_state.orders = week_3
+
+st.write(st.session_state.orders)
 
 st.write(f"### {get_simulation_time()}")
 
