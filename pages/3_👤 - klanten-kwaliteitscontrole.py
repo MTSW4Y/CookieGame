@@ -26,8 +26,11 @@ with col3:
 
 st.write("Geef hier aan welke groepen feedback hebben gevraagd.")
 cols = st.columns(6)
+groep_feedback = {}
 for i, col in enumerate(cols):
-    col.checkbox(f'Groep {i + 1}')
+    groep_feedback[i] = col.checkbox(f'Groep {i + 1}')
+
+st.write(groep_feedback)
 
 reject_reason = st.selectbox("Wat is de reden voor de afkeur:", ["Vulling zichtbaar", "Lagen los", "Afwijking in vorm", "Overig"])
 
