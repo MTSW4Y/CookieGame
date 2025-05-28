@@ -7,30 +7,28 @@ from orders import week_1, week_2, week_3
 
 #########################ORDERS##################################
 
-orders = week_2
-
 # dit moet ik nog even opslimmen..........
 
-def schiet_eerste_order_in():
+def schiet_eerste_order_in(orders):
     for order in orders:
         if order['Uur'] == st.session_state.last_hour:
             add_order(order['Klant'], f"Levermoment {order['Due']}", order['Stroopwafels'], order['Prince'], order['Penny_wafels'])
             
-def schiet_nieuwe_orders_in():
+def schiet_nieuwe_orders_in(orders):
     for order in orders:
         if order['Uur'] == st.session_state.last_hour + 1:
             add_order(order['Klant'], f"Levermoment {order['Due']}", order['Stroopwafels'], order['Prince'], order['Penny_wafels'])
 
 #########################TIMER############################
 
-def start_timer():
+def start_timer(orders):
     st.session_state.timer_running = True
     if st.session_state.start_time:
         pass
     else:
         st.session_state.start_time = time.time()
         upsert_time(get_simulation_time(), row_id=2)
-        schiet_eerste_order_in()
+        schiet_eerste_order_in(orders)
         for groep in [1,2,3,4,5,6]:
             registrer_supplies(groep, 
                        gel_aant_stroopwafels_vul = 1, 
@@ -81,12 +79,21 @@ st.title('App Management')
 
 st_autorefresh(interval=1000, key="order_refresh")
 
+selection = st.selectbox("Welke week wordt er gespeeld?", ["week 1", "week 2", "week 3"])
+
+if selection == "week 1":
+    orders = week_1
+if selection == "week 2":
+    orders = week_2
+if selection == "week 3":
+    orders = week_3   
+
 st.write(f"### {get_simulation_time()}")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.button('🕒 Start Timer', on_click=start_timer)
+    st.button('🕒 Start Timer', on_click=lambda: start_timer(orders))
 
 with col2:
     st.button('🔴 Reset Game', on_click=reset_game)
