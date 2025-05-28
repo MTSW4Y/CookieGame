@@ -29,7 +29,9 @@ cols = st.columns(6)
 for i, col in enumerate(cols):
     col.checkbox(f'Groep {i + 1}')
 
-if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, gel_aant_stroopwafels, gel_aant_prince_koeken, gel_aant_penny_wafels, kwal_stroopwafels, kwal_prince_koeken, kwal_penny_wafels)):
+reject_reason = st.selectbox("Wat is de reden voor de afkeur:", ["Vulling zichtbaar", "Lagen los", "Afwijking in vorm", "Overig"])
+
+if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, gel_aant_stroopwafels, gel_aant_prince_koeken, gel_aant_penny_wafels, kwal_stroopwafels, kwal_prince_koeken, kwal_penny_wafels, reject_reason)):
     st.toast("Kwaliteit geregistreerd", icon="✅")
 
 st.dataframe(get_ready_orders(), hide_index=True)
