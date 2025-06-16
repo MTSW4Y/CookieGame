@@ -1,4 +1,4 @@
-start_supplies = {'gel_aant_stroopwafels_vul': 1, 'gel_aant_prince_koeken_vul': 1, 'gel_aant_pennywafels_vul': 1, 'gel_aant_stroopwafels_buit': , 'gel_aant_prince_koeken_buit': 1, 'gel_aant_pennywafels_buit':1, 'gel_aant_bakjes': 0}
+start_supplies = {'gel_aant_stroopwafels_vul': 1, 'gel_aant_prince_koeken_vul': 1, 'gel_aant_pennywafels_vul': 1, 'gel_aant_stroopwafels_buit': 1, 'gel_aant_prince_koeken_buit': 1, 'gel_aant_pennywafels_buit':1, 'gel_aant_bakjes': 0}
 
 ronde_1 = [
     {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 6, "Prince": 3, "Penny_wafels": 13},
