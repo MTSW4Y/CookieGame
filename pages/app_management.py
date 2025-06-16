@@ -3,7 +3,7 @@ import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders, clear_supplies, upsert_time, registrer_supplies
-from orders import ronde_1, ronde_2, ronde_3
+from orders import ronde_1, ronde_2, ronde_3, start_supplies
 
 #########################ORDERS##################################
 
@@ -30,14 +30,7 @@ def start_timer(orders):
         upsert_time(get_simulation_time(), row_id=2)
         schiet_eerste_order_in(orders)
         for groep in [1,2,3,4,5,6]:
-            registrer_supplies(groep, 
-                       gel_aant_stroopwafels_vul = 1, 
-                       gel_aant_prince_koeken_vul= 1, 
-                       gel_aant_pennywafels_vul = 1, 
-                       gel_aant_stroopwafels_buit = 1, 
-                       gel_aant_prince_koeken_buit = 1, 
-                       gel_aant_pennywafels_buit = 1,
-                       gel_aant_bakjes = 0)
+            registrer_supplies(groep, **start_supplies)
 
 def reset_game():
     del st.session_state.timer_running
