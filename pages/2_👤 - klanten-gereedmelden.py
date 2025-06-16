@@ -11,12 +11,6 @@ with col1:
     st.write("### Orderinfo")
     groep = st.number_input("Groepsnummer", step=1)
     ordernummer = st.number_input("Ordernummer", step=1)
-    
-with col2:
-    pass
-
-with col3:
-    pass
 
 if st.button('Registeer', on_click=lambda: add_ready_order(ordernummer, groep, "", "", "", "", "", "")):
     st.toast("Order gereedgemeld", icon="✅")

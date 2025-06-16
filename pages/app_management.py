@@ -2,49 +2,42 @@ import streamlit as st
 import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
-from database import get_orders, clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders, clear_supplies, upsert_time
+from database import clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders, clear_supplies, upsert_time, registrer_supplies
+from orders import week_1, week_2, week_3
 
 #########################ORDERS##################################
 
-orders = [
-    {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 6, "Prince": 7, "Penny_wafels": 0},
-    {"Uur": 8, "Klant": "Jumbo", "Due": 2, "Stroopwafels": 0, "Prince": 9, "Penny_wafels": 23},
-    {"Uur": 8, "Klant": "AH", "Due": 3, "Stroopwafels": 0, "Prince": 5, "Penny_wafels": 30},
-    {"Uur": 8, "Klant": "Hema", "Due": 3, "Stroopwafels": 10, "Prince": 6, "Penny_wafels": 0},
-    {"Uur": 9, "Klant": "Jumbo", "Due": 4, "Stroopwafels": 0, "Prince": 3, "Penny_wafels": 15},
-    {"Uur": 9, "Klant": "AH", "Due": 4, "Stroopwafels": 0, "Prince": 4, "Penny_wafels": 13},
-    {"Uur": 10, "Klant": "Jumbo", "Due": 5, "Stroopwafels": 0, "Prince": 5, "Penny_wafels": 21},
-    {"Uur": 10, "Klant": "Hema", "Due": 5, "Stroopwafels": 6, "Prince": 10, "Penny_wafels": 0},
-    {"Uur": 11, "Klant": "Jumbo", "Due": 6, "Stroopwafels": 0, "Prince": 3, "Penny_wafels": 21},
-    {"Uur": 11, "Klant": "AH", "Due": 6, "Stroopwafels": 0, "Prince": 5, "Penny_wafels": 22},
-    {"Uur": 13, "Klant": "Hema", "Due": 7, "Stroopwafels": 4, "Prince": 10, "Penny_wafels": 0},
-    {"Uur": 13, "Klant": "AH", "Due": 7, "Stroopwafels": 0, "Prince": 5, "Penny_wafels": 20},
-    {"Uur": 14, "Klant": "Jumbo", "Due": 8, "Stroopwafels": 0, "Prince": 8, "Penny_wafels": 16},
-    {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 4, "Prince": 14, "Penny_wafels": 0}
-]
-
 # dit moet ik nog even opslimmen..........
 
-def schiet_eerste_order_in():
+def schiet_eerste_order_in(orders):
     for order in orders:
         if order['Uur'] == st.session_state.last_hour:
             add_order(order['Klant'], f"Levermoment {order['Due']}", order['Stroopwafels'], order['Prince'], order['Penny_wafels'])
             
-def schiet_nieuwe_orders_in():
+def schiet_nieuwe_orders_in(orders):
     for order in orders:
         if order['Uur'] == st.session_state.last_hour + 1:
             add_order(order['Klant'], f"Levermoment {order['Due']}", order['Stroopwafels'], order['Prince'], order['Penny_wafels'])
 
 #########################TIMER############################
 
-def start_timer():
+def start_timer(orders):
     st.session_state.timer_running = True
     if st.session_state.start_time:
         pass
     else:
         st.session_state.start_time = time.time()
         upsert_time(get_simulation_time(), row_id=2)
-        schiet_eerste_order_in()
+        schiet_eerste_order_in(orders)
+        for groep in [1,2,3,4,5,6]:
+            registrer_supplies(groep, 
+                       gel_aant_stroopwafels_vul = 1, 
+                       gel_aant_prince_koeken_vul= 1, 
+                       gel_aant_pennywafels_vul = 1, 
+                       gel_aant_stroopwafels_buit = 1, 
+                       gel_aant_prince_koeken_buit = 1, 
+                       gel_aant_pennywafels_buit = 1,
+                       gel_aant_bakjes = 0)
 
 def reset_game():
     del st.session_state.timer_running
@@ -70,7 +63,7 @@ if st.session_state.timer_running:
     if current_hour != st.session_state.last_hour:
         if current_hour != 12:
             st.session_state.delivery_slot += 1
-            schiet_nieuwe_orders_in()
+            schiet_nieuwe_orders_in(st.session_state.orders)
         st.session_state.last_hour = current_hour
 
 if st.session_state.last_hour == 12:
@@ -86,12 +79,21 @@ st.title('App Management')
 
 st_autorefresh(interval=1000, key="order_refresh")
 
+selection = st.selectbox("Welke week wordt er gespeeld?", ["week 1", "week 2", "week 3"])
+
+if selection == "week 1":
+    st.session_state.orders = week_1
+if selection == "week 2":
+    st.session_state.orders = week_2
+if selection == "week 3":
+    st.session_state.orders = week_3
+
 st.write(f"### {get_simulation_time()}")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.button('🕒 Start Timer', on_click=start_timer)
+    st.button('🕒 Start Timer', on_click=lambda: start_timer(st.session_state.orders))
 
 with col2:
     st.button('🔴 Reset Game', on_click=reset_game)
@@ -102,9 +104,9 @@ col5, col6 = st.columns(2)
     
 with col5:
     stroopwafels = st.number_input("Vul het aantal stroopwafels in voor deze bestelling", min_value=0, max_value=10, step=1)
-    Penny_wafels = st.number_input("Vul het aantal penny wafels in voor deze bestelling", min_value=0, max_value=10, step=1)
+    penny_wafels = st.number_input("Vul het aantal penny wafels in voor deze bestelling", min_value=0, max_value=10, step=1)
     prince_koeken = st.number_input("Vul het aantal prince koeken in voor deze bestelling", min_value=0, max_value=10, step=1)
     
 with col6:
     klant = st.selectbox("Vul de klant in", ["Jumbo", "AH", "Hema"])
-    st.button('Bestel', on_click=lambda: add_order(klant, f"Levermoment {st.session_state.delivery_slot + 1}", stroopwafels, prince_koeken, Penny_wafels))
+    st.button('Bestel', on_click=lambda: add_order(klant, f"Levermoment {st.session_state.delivery_slot + 1}", stroopwafels, prince_koeken, penny_wafels))

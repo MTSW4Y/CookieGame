@@ -27,14 +27,28 @@ def clear_orders():
         conn.execute('DELETE FROM orders')
         conn.commit()
 
+def delete_order_by_id(order_id):
+    with get_connection() as conn:
+        conn.execute('DELETE FROM orders WHERE id = ?', (order_id,))
+        conn.commit()
+
+def registrer_supplies(groep, gel_aant_stroopwafels_vul, gel_aant_prince_koeken_vul, gel_aant_pennywafels_vul, gel_aant_stroopwafels_buit, gel_aant_prince_koeken_buit, gel_aant_pennywafels_buit, gel_aant_bakjes):
+    add_supply(groep, 'stroopwafel', 'vulling', gel_aant_stroopwafels_vul)
+    add_supply(groep, 'princekoeken', 'vulling', gel_aant_prince_koeken_vul)
+    add_supply(groep, 'pennywafels', 'vulling', gel_aant_pennywafels_vul)
+    add_supply(groep, 'stroopwafel', 'koekje', gel_aant_stroopwafels_buit)
+    add_supply(groep, 'princekoeken', 'koekje', gel_aant_prince_koeken_buit)
+    add_supply(groep, 'pennywafels', 'koekje', gel_aant_pennywafels_buit)
+    add_supply(groep, 'bakjes', 'rest', gel_aant_bakjes)
+
 ##############################  GEREEDMELDEN KLANT ORDERS  ##############################
 
-def add_ready_order(order_no, group_no, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels):
+def add_ready_order(order_no, group_no, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels, reject_reason=""):
     log_date = get_simulation_time()
     with get_connection() as conn:
         conn.execute(
-            'INSERT INTO ready_orders (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels)
+            'INSERT INTO ready_orders (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels, reject_reason) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (order_no, group_no, log_date, del_stroopwafels, del_prince_koeken, del_penny_wafels, q_del_stroopwafels, q_del_prince_koeken, q_del_penny_wafels, reject_reason)
         )
         conn.commit()
 
@@ -46,6 +60,11 @@ def get_ready_orders():
 def clear_ready_orders():
     with get_connection() as conn:
         conn.execute('DELETE FROM ready_orders')
+        conn.commit()
+
+def delete_ready_order_by_id(order_id):
+    with get_connection() as conn:
+        conn.execute('DELETE FROM ready_orders WHERE id = ?', (order_id,))
         conn.commit()
 
 ##############################  SUPPLIES  ##############################
@@ -69,6 +88,11 @@ def clear_supplies():
         conn.execute('DELETE FROM supplies')
         conn.commit()
 
+def delete_supply_by_id(order_id):
+    with get_connection() as conn:
+        conn.execute('DELETE FROM supplies WHERE id = ?', (order_id,))
+        conn.commit()
+        
 ##############################  SIMULATIETIJD  ##############################
 
 def get_simulation_time():
