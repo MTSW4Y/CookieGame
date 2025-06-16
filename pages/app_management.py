@@ -55,8 +55,8 @@ if 'timer_running' not in st.session_state:
    
 if st.session_state.timer_running:
     elapsed_real_time = time.time() - st.session_state.start_time
-    elapsed_game_time = timedelta(seconds=elapsed_real_time * 108)  # 5 minuten = 9 uur
-    # elapsed_game_time = timedelta(seconds=elapsed_real_time * 12)  # 5 minuten = 1 uur
+    # elapsed_game_time = timedelta(seconds=elapsed_real_time * 108)  # 5 minuten = 9 uur
+    elapsed_game_time = timedelta(seconds=elapsed_real_time * 12)  # 5 minuten = 1 uur
     st.session_state.current_time = datetime.strptime('08:00', '%H:%M') + elapsed_game_time
     
     current_hour = st.session_state.current_time.hour
