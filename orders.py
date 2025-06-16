@@ -48,5 +48,5 @@ week_3 = [
     {"Uur": 13, "Klant": "Hema", "Due": 7, "Stroopwafels": 5, "Prince": 19, "Penny_wafels": 0},
     {"Uur": 13, "Klant": "AH", "Due": 7, "Stroopwafels": 0, "Prince": 10, "Penny_wafels": 20},
     {"Uur": 14, "Klant": "Jumbo", "Due": 8, "Stroopwafels": 0, "Prince": 15, "Penny_wafels": 15},
-    {"Uur": 15, "Klant": "Hema", "Due": 8, "Stroopwafels": 5, "Prince": 26, "Penny_wafels": 0}
+    {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 5, "Prince": 26, "Penny_wafels": 0}
 ]
