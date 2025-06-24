@@ -50,3 +50,5 @@ ronde_3 = [
     {"Uur": 14, "Klant": "Jumbo", "Due": 8, "Stroopwafels": 0, "Prince": 15, "Penny_wafels": 15},
     {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 5, "Prince": 26, "Penny_wafels": 0}
 ]
+
+ronde_4 = []
