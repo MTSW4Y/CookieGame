@@ -3,7 +3,7 @@ import time
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 from database import clear_orders, upsert_time, get_simulation_time, add_order, clear_ready_orders, clear_supplies, upsert_time, registrer_supplies
-from orders import week_1, week_2, week_3
+from orders import ronde_1, ronde_2, ronde_3, start_supplies
 
 #########################ORDERS##################################
 
@@ -30,14 +30,7 @@ def start_timer(orders):
         upsert_time(get_simulation_time(), row_id=2)
         schiet_eerste_order_in(orders)
         for groep in [1,2,3,4,5,6]:
-            registrer_supplies(groep, 
-                       gel_aant_stroopwafels_vul = 1, 
-                       gel_aant_prince_koeken_vul= 1, 
-                       gel_aant_pennywafels_vul = 1, 
-                       gel_aant_stroopwafels_buit = 1, 
-                       gel_aant_prince_koeken_buit = 1, 
-                       gel_aant_pennywafels_buit = 1,
-                       gel_aant_bakjes = 0)
+            registrer_supplies(groep, **start_supplies)
 
 def reset_game():
     del st.session_state.timer_running
@@ -79,14 +72,14 @@ st.title('App Management')
 
 st_autorefresh(interval=1000, key="order_refresh")
 
-selection = st.selectbox("Welke week wordt er gespeeld?", ["week 1", "week 2", "week 3"])
+selection = st.selectbox("Welke ronder wordt er gespeeld?", ["ronde 1", "ronde 2", "ronde 3"])
 
-if selection == "week 1":
-    st.session_state.orders = week_1
-if selection == "week 2":
-    st.session_state.orders = week_2
-if selection == "week 3":
-    st.session_state.orders = week_3
+if selection == "ronde 1":
+    st.session_state.orders = ronde_1
+if selection == "ronde 2":
+    st.session_state.orders = ronde_2
+if selection == "ronde 3":
+    st.session_state.orders = ronde_3
 
 st.write(f"### {get_simulation_time()}")
 

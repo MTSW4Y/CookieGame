@@ -1,6 +1,6 @@
-start_supplies = []
+start_supplies = {'gel_aant_stroopwafels_vul': 1, 'gel_aant_prince_koeken_vul': 1, 'gel_aant_pennywafels_vul': 1, 'gel_aant_stroopwafels_buit': 1, 'gel_aant_prince_koeken_buit': 1, 'gel_aant_pennywafels_buit':1, 'gel_aant_bakjes': 0}
 
-week_1 = [
+ronde_1 = [
     {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 6, "Prince": 3, "Penny_wafels": 13},
     {"Uur": 8, "Klant": "Jumbo", "Due": 2, "Stroopwafels": 0, "Prince": 8, "Penny_wafels": 19},
     {"Uur": 8, "Klant": "AH", "Due": 3, "Stroopwafels": 0, "Prince": 5, "Penny_wafels": 30},
@@ -17,7 +17,7 @@ week_1 = [
     {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 4, "Prince": 0, "Penny_wafels": 20}
 ]
 
-week_2 = [
+ronde_2 = [
     {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 6, "Prince": 7, "Penny_wafels": 0},
     {"Uur": 8, "Klant": "Jumbo", "Due": 2, "Stroopwafels": 0, "Prince": 9, "Penny_wafels": 23},
     {"Uur": 8, "Klant": "AH", "Due": 3, "Stroopwafels": 0, "Prince": 5, "Penny_wafels": 30},
@@ -34,7 +34,7 @@ week_2 = [
     {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 4, "Prince": 14, "Penny_wafels": 0}
 ]
 
-week_3 = [
+ronde_3 = [
     {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 7, "Prince": 14, "Penny_wafels": 0},
     {"Uur": 8, "Klant": "Jumbo", "Due": 2, "Stroopwafels": 0, "Prince": 17, "Penny_wafels": 19},
     {"Uur": 8, "Klant": "AH", "Due": 3, "Stroopwafels": 0, "Prince": 10, "Penny_wafels": 28},
