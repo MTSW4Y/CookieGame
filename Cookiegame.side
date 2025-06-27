@@ -1,0 +1,293 @@
+{
+  "id": "9d053436-1c8a-4cca-93f4-3488c0262459",
+  "version": "2.0",
+  "name": "Cookiegame",
+  "url": "https://cookiegame.streamlit.app",
+  "tests": [{
+    "id": "d05d3095-cd49-4818-9d86-8a57eca6bbe3",
+    "name": "1 start simulatie",
+    "commands": [{
+      "id": "592e3f94-d004-4c7d-9456-193beafbd402",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a6162e0-6e9c-43ed-8695-1001694e2436",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1054x896",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7897b93e-3a80-4646-99be-07fbdbbe6bab",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=1",
+      "targets": [
+        ["index=1"]
+      ],
+      "value": ""
+    }, {
+      "id": "669b58e1-1cd3-4d67-9b33-1cb65143ebca",
+      "comment": "",
+      "command": "click",
+      "target": "css=.st-emotion-cache-8ezv7j .st-emotion-cache-pd6qx2",
+      "targets": [
+        ["css=.st-emotion-cache-8ezv7j .st-emotion-cache-pd6qx2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/header/div/div/div/div/button/span/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/button/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f984597-e8f5-4a54-ae62-64c27b52fdd1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.st-emotion-cache-1t00e1w",
+      "targets": [
+        ["css=.st-emotion-cache-1t00e1w", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/section/div/div[2]/ul/li[8]/div/a/span", "xpath:idRelative"],
+        ["xpath=//li[8]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'app management')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f2977f6-8681-4c48-9d2d-8048c6d7ef72",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(3) .st-an > .st-ak:nth-child(1)",
+      "targets": [
+        ["css=.stElementContainer:nth-child(3) .st-an > .st-ak:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/section/div/div/div[3]/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ccdc406-783e-4d99-823b-d8cdbe247e68",
+      "comment": "",
+      "command": "click",
+      "target": "css=#bui8__anchor .st-emotion-cache-qiev7j",
+      "targets": [
+        ["css=#bui8__anchor .st-emotion-cache-qiev7j", "css:finder"],
+        ["xpath=//div[@id='bui8__anchor']/div/div", "xpath:idRelative"],
+        ["xpath=//li[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3995f880-a562-4a2a-b9f7-f58a96fde993",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.stColumn:nth-child(1) .stButton p",
+      "targets": [
+        ["css=.stColumn:nth-child(1) .stButton p", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/section/div/div/div[5]/div/div/div/div/div/button/div/p", "xpath:idRelative"],
+        ["xpath=//button/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'🕒 Start Timer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c6f8b54-0a66-4040-a39f-3c8e7013f04b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stColumn:nth-child(1) .stButton p",
+      "targets": [
+        ["css=.stColumn:nth-child(1) .stButton p", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/section/div/div/div[5]/div/div/div/div/div/button/div/p", "xpath:idRelative"],
+        ["xpath=//button/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'🕒 Start Timer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4949d104-6f5f-41ad-b656-2f5a301934fc",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.stColumn:nth-child(1) .stButton p",
+      "targets": [
+        ["css=.stColumn:nth-child(1) .stButton p", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/section/div/div/div[5]/div/div/div/div/div/button/div/p", "xpath:idRelative"],
+        ["xpath=//button/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'🕒 Start Timer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "26fe208d-d0c9-4055-ab8c-e59d7cfc3fba",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.st-emotion-cache-3gfel5:nth-child(7) .st-emotion-cache-yqders",
+      "targets": [
+        ["css=.st-emotion-cache-3gfel5:nth-child(7) .st-emotion-cache-yqders", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/section/div/div[2]/ul/li[7]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://cookiegame.streamlit.app/data')]", "xpath:href"],
+        ["xpath=//li[7]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e84c42a-61bf-4c24-9cd8-20f13ba803fa",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.st-emotion-cache-3gfel5:nth-child(7) .st-emotion-cache-yqders",
+      "targets": [
+        ["css=.st-emotion-cache-3gfel5:nth-child(7) .st-emotion-cache-yqders", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/section/div/div[2]/ul/li[7]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://cookiegame.streamlit.app/data')]", "xpath:href"],
+        ["xpath=//li[7]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "060b0c46-12cd-4762-83d8-1eaa478e61b5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.st-emotion-cache-191kzeu",
+      "targets": [
+        ["css=.st-emotion-cache-191kzeu", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/section/div/div[2]/ul/li[2]/div/a/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'openstaande orders')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "702f2b08-0c8e-463f-8702-f5e90cbba6d1",
+    "name": "2 voeg spoed order toe",
+    "commands": [{
+      "id": "3b8e7bfb-251e-438d-b1a5-2ebe901d69ff",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a501d672-52c9-4ea8-a371-b7dc74895383",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1053x895",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1eb78bf-7211-4c12-a0bb-bb11b2b63f14",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=1",
+      "targets": [
+        ["index=1"]
+      ],
+      "value": ""
+    }, {
+      "id": "1aaea89a-11e0-4004-88b3-687db9a3768c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.st-emotion-cache-8ezv7j .st-emotion-cache-pd6qx2",
+      "targets": [
+        ["css=.st-emotion-cache-8ezv7j .st-emotion-cache-pd6qx2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/header/div/div/div/div/button/span/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/button/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8f2c112-bb2b-4d7c-bf92-a281fc3893cc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.st-emotion-cache-1t00e1w",
+      "targets": [
+        ["css=.st-emotion-cache-1t00e1w", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/section/div/div[2]/ul/li[8]/div/a/span", "xpath:idRelative"],
+        ["xpath=//li[8]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'app management')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0465423-9d59-4fd3-a66e-1922887bbf1d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(1) .st-emotion-cache-1ksltpv:nth-child(2)",
+      "targets": [
+        ["css=.stElementContainer:nth-child(1) .st-emotion-cache-1ksltpv:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/section/div/div/div[7]/div/div/div/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20a5ef25-59fd-4a05-a154-a89909184687",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(1) .st-emotion-cache-1ksltpv:nth-child(2)",
+      "targets": [
+        ["css=.stElementContainer:nth-child(1) .st-emotion-cache-1ksltpv:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/section/div/div/div[7]/div/div/div/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca23c709-c97d-412e-987a-eb8076b7a0f3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path",
+      "targets": [
+        ["css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "a41ceb2c-5fa5-4656-b137-08634cf91391",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path",
+      "targets": [
+        ["css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5cb67d1-f628-44b2-9be8-d4384483a875",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path",
+      "targets": [
+        ["css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0acf91c1-962b-459f-9444-8f9a2d2c3d06",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path",
+      "targets": [
+        ["css=.stElementContainer:nth-child(3) .st-emotion-cache-1ksltpv:nth-child(2) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "2baf800e-13ad-48db-959d-307f66818c1a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.stElementContainer:nth-child(2) .st-emotion-cache-1rwb540",
+      "targets": [
+        ["css=.stElementContainer:nth-child(2) .st-emotion-cache-1rwb540", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/section/div/div/div[7]/div/div[2]/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bestel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c4c24b5-8269-4b15-afad-8df69b56fbd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.st-emotion-cache-191kzeu",
+      "targets": [
+        ["css=.st-emotion-cache-191kzeu", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/section/div/div[2]/ul/li[2]/div/a/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'openstaande orders')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "15fd2e8e-cf93-45bf-a38c-b22c8a61677d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://cookiegame.streamlit.app/"],
+  "plugins": []
+}
