@@ -51,4 +51,19 @@ ronde_3 = [
     {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 5, "Prince": 26, "Penny_wafels": 0}
 ]
 
-ronde_4 = []
+ronde_4 = [
+    {"Uur": 8, "Klant": "Hema", "Due": 2, "Stroopwafels": 7, "Prince": 14, "Penny_wafels": 0},
+    {"Uur": 8, "Klant": "Jumbo", "Due": 2, "Stroopwafels": 12, "Prince": 17, "Penny_wafels": 9},
+    {"Uur": 8, "Klant": "AH", "Due": 3, "Stroopwafels": 0, "Prince": 10, "Penny_wafels": 26},
+    {"Uur": 8, "Klant": "Hema", "Due": 3, "Stroopwafels": 11, "Prince": 12, "Penny_wafels": 0},
+    {"Uur": 9, "Klant": "Jumbo", "Due": 4, "Stroopwafels": 14, "Prince": 0, "Penny_wafels": 3},
+    {"Uur": 9, "Klant": "AH", "Due": 4, "Stroopwafels": 0, "Prince": 8, "Penny_wafels": 4},
+    {"Uur": 10, "Klant": "Jumbo", "Due": 5, "Stroopwafels": 10, "Prince": 10, "Penny_wafels": 9},
+    {"Uur": 10, "Klant": "Hema", "Due": 5, "Stroopwafels": 6, "Prince": 19, "Penny_wafels": 0},
+    {"Uur": 11, "Klant": "Jumbo", "Due": 6, "Stroopwafels": 10, "Prince": 5, "Penny_wafels": 9},
+    {"Uur": 11, "Klant": "AH", "Due": 6, "Stroopwafels": 0, "Prince": 11, "Penny_wafels": 18},
+    {"Uur": 13, "Klant": "Hema", "Due": 7, "Stroopwafels": 4, "Prince": 19, "Penny_wafels": 0},
+    {"Uur": 13, "Klant": "AH", "Due": 7, "Stroopwafels": 0, "Prince": 10, "Penny_wafels": 19},
+    {"Uur": 14, "Klant": "Jumbo", "Due": 8, "Stroopwafels": 10, "Prince": 15, "Penny_wafels": 5},
+    {"Uur": 14, "Klant": "Hema", "Due": 8, "Stroopwafels": 4, "Prince": 26, "Penny_wafels": 0}
+]
